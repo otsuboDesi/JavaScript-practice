@@ -1,0 +1,25 @@
+<script>
+  // 暗黙的な型変換
+  // 数値と文字列が混在した場合は加算演算子は数値を文字列に暗黙的に変換した後、文字列としてけつごうする
+  console.log(1 + "2");
+
+  // 減算演算子の場合は数値として統一される
+  console.log("2" - 1);
+
+  //出力の確認
+
+  // true は数値変換時に 1 になるので、 1 * 1
+  console.log("1", 1 * true);
+
+  // false は数値変換時に 0 になり、true は 1 になるので、0 + 1
+  console.log("2", false + true);
+
+  // 0 はJavaScriptで "falsy" な値とされています（真偽値に変換すると false になる値）
+  console.log("3", Boolean(0));
+
+  // 1 は "truthy" な値です（真偽値に変換すると true になる値）
+  console.log("4", Boolean(1));
+
+  // -1 も "truthy" な値。JavaScriptでは、0 以外の数値（正または負）は真偽値に変換すると true になる。
+  console.log("5", Boolean(-1));
+</script>
