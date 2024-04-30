@@ -1,0 +1,10 @@
+<script>
+  let person = { name: "Bob", age: "32", male: true };
+  delete person.name;
+  console.log('{age: "32", male: true}', person);
+  console.log("typeof person: object", typeof person);
+  // person.age が文字列 "32" として定義されているため、その前に+を置くことで、文字列を数値に変換しようとします。
+  // 単項プラス演算子は、その後ろにあるオペランド"32"を数値に変換します。
+  console.log("+person.age: 33", +person.age); // wrong -> correct is "32"
+  console.log("!person.male: false ", !person.male);
+</script>
