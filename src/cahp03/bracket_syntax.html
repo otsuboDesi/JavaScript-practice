@@ -1,0 +1,33 @@
+<script>
+  //ブラケット記法(bracket notation)でageの値を取得する
+  let person = {
+    name: {
+      first: "太郎",
+      last: "田中",
+    },
+    age: 18,
+  };
+
+  //get age value
+  console.log("age:", person["age"]);
+
+  //get name value
+  console.log("last name:", person["name"]["last"]);
+  person["name"]["last"] = "次郎";
+  //get name value
+  console.log("last name:", person["name"]["last"]);
+
+  person["gender"] = "男";
+  //get gender value
+  console.log("gender:", person["gender"]);
+
+  person["family"] = {
+    wife: "花子",
+    child: "三郎",
+  };
+  //get wife value
+  console.log("wife:", person["family"]["wife"]);
+
+  // get person object
+  console.log("person", person);
+</script>
