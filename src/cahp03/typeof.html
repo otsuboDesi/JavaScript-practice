@@ -1,0 +1,15 @@
+<script>
+  // typeofという演算子はデータ型を確認することが出来る
+
+  console.log("1: ", typeof "hello");
+  console.log("2 :", typeof 10);
+  console.log("3: ", typeof 10n);
+  console.log("4: ", typeof true);
+  console.log("5: ", typeof undefined);
+  console.log("6: ", typeof {});
+
+  // nullだった場合はobjectを返します
+  //   このバグを修正すると既存のJavaScriptのコードに影響が出るためこのような仕様になっています;
+  console.log("7: ", typeof null);
+  console.log("8: ", typeof Symbol());
+</script>

@@ -1,0 +1,26 @@
+<script>
+  //ドット記法(Dot notation)でageの値を取得する
+  let person = {
+    name: {
+      first: "太郎",
+      last: "田中",
+    },
+    age: 18,
+  };
+
+  console.log("age:", person.age);
+
+  person.name.last = "次郎";
+  console.log("last name:", person.name.last);
+
+  person.gender = "男";
+  console.log("gender:", person.gender);
+
+  person.family = {
+    wife: "花子",
+    child: "三郎",
+  };
+  console.log("family:", person.family);
+
+  console.log("person", person);
+</script>

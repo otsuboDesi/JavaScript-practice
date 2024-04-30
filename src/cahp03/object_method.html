@@ -1,0 +1,39 @@
+<script>
+  let person = {
+    hello: function () {
+      console.log("こんにちは");
+    },
+  };
+
+  person.hello();
+
+  person.bye = function () {
+    console.log("さようなら");
+  };
+  person.bye();
+
+  person.hello = function () {
+    console.log("hello");
+  };
+  person.hello();
+
+  //   ES6からオブジェクトリテラル内でのメソッドを記述する際に省略記法を使うことが出来るようになりました
+  let person = {
+    // hello: function () と書かなくてよい
+    hello() {
+      console.log("こんにちは");
+    },
+  };
+
+  //   また、既に宣言済みの識別子をそのままオブジェクトのプロパティ名として値を設定することもできます。
+
+  // 変数の宣言
+  let val = 10;
+  // 関数の宣言
+  function fn() {}
+
+  //   本来は{ val: val, fn: fn }だが、省略することが出来る
+  const obj = { val, fn };
+
+  console.log(obj);
+</script>

@@ -1,0 +1,25 @@
+<script>
+  // 1. add propaty in the object literal
+  let obj = {
+    prop: true,
+    subObj: {
+      val: 100,
+    },
+    greeting() {
+      console.log("こんにちは。");
+    },
+  };
+
+  console.log("obj.prop", obj.prop);
+  console.log("obj.subObj.val", obj.subObj.val);
+  obj.greeting();
+
+  // 2. plz rewrite bracket way
+  console.log(obj["prop"]);
+  console.log(obj["subObj"]["val"]);
+  obj["greeting"]();
+
+  // 3. add the val key and 1000 value
+  // obj.subObj = { val2: 1000 }; ->  wrong!
+  obj.subObj.val2 = 1000;
+</script>
