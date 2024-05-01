@@ -1,0 +1,10 @@
+<script>
+  const fruitArray = ["りんご", "メロン", "みかん"];
+
+  console.log(fruitArray[0]);
+  console.log(fruitArray[1]);
+  // const で宣言された変数は、再代入を防ぐものだが、
+  // 変数の値（この場合は配列そのものへの参照）を変更することを禁止するものであり、配列の内容（要素）を変更することを禁止するものではない。
+  fruitArray[0] = "バナナ";
+  console.log(fruitArray[0]);
+</script>
