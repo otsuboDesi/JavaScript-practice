@@ -1,0 +1,11 @@
+<script>
+  const map = new Map();
+  // key, valueをmapに登録する
+  map.set("apple", "りんご");
+  map.set("banana", "バナナ");
+
+  //   分割代入構文: 似にの変数名でキーと値を受け取る
+  for (const [key, value] of map) {
+    console.log(key, value);
+  }
+</script>

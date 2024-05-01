@@ -1,0 +1,16 @@
+<script>
+  // Map はキーと値のペアを保存するためのコレクションで、
+  // オブジェクトのプロパティとは異なり、任意の型のキーを使用できる。
+  const map = new Map();
+  //   map.set(key, value) メソッドを使って、map に "apple" キーと "りんご" の値を追加。
+  map.set("apple", "りんご");
+  map.set("banana", "バナナ");
+
+  for (const row of map) {
+    // output:["apple", "りんご"]
+    // output:["banana", "バナナ"]
+    console.log(row[0], row[1]);
+
+    console.log(row);
+  }
+</script>

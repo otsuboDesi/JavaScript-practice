@@ -1,0 +1,14 @@
+<script>
+  const obj = { prop1: "これは列挙可能プロパティです" };
+
+  //
+  // enumerable: false -> 列挙可能を無効にしている。無効になるとfor inの対象にならない
+  Reflect.defineProperty(obj, "prop2", {
+    value: "これは列挙可能プロパティではありません",
+    enumerable: false,
+  });
+
+  for (const key in obj) {
+    console.log(key, obj[key]);
+  }
+</script>

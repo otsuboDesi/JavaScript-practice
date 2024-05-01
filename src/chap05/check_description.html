@@ -1,0 +1,12 @@
+<script>
+  const obj = { prop: "値" };
+  // Reflect.getOwnPropertyDescriptor: プロパティ記述子を取得するメソッド
+  // プロパティ記述子: オブジェクトのプロパティの特性を説明するオブジェクト
+  // value: プロパティの値
+  // writable: プロパティの値が書き換え可能かどうかのブール値
+  // enumerable: プロパティが列挙可能かどうかのブール値。例えば、for...in ループや Object.keys() によって列挙されるかどうか
+  // configurable: プロパティが削除可能であるか、またはプロパティの特性（記述子）を変更できるかどうかのブール値
+  const propDesc = Reflect.getOwnPropertyDescriptor(obj, "prop");
+
+  console.log(propDesc);
+</script>

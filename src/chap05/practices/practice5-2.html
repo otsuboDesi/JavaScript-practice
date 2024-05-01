@@ -1,0 +1,13 @@
+<script>
+  //1. valの値がfalsyの場合にHelloを初期値として設定する
+  let val = "";
+  if (!val) {
+    val = "Hello";
+  }
+
+  //2. valの値がnull, undefinedの場合にHelloを初期値として設定する
+  val = null;
+  if (val === null || val === undefined) {
+    val = "Hello";
+  }
+</script>

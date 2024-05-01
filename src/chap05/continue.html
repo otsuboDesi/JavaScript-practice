@@ -1,0 +1,13 @@
+<script>
+  let i = 0;
+  while (i < 8) {
+    i++;
+    // 奇数の時true, 偶数の時false
+    if (i % 2) {
+      // 奇数の時に移行のコードを実行せず、ブロックの先端に処理を移す(つまりwhileから)
+      continue;
+    }
+    // 奇数の時にはこの行は実行されない
+    console.log(i);
+  }
+</script>
