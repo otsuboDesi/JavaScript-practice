@@ -1,12 +1,12 @@
 <script>
   const fruits = { apple: "りんご", banana: "バナナ" };
-  const props = Object.keys(fruits);
+  const props = Object.values(fruits);
 
-  //   ['apple', 'banana']になる
+  //   ['りんご', 'バナナ']になる
   console.log(props);
 
   //   プロパティの配列をループ
-  for (const prop of props) {
-    console.log(prop, fruits[prop]);
+  for (const value of values) {
+    console.log(value);
   }
 </script>
