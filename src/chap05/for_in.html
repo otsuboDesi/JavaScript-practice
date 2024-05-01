@@ -1,0 +1,11 @@
+<script>
+  const fruits = { apple: "りんご", banana: "バナナ", orange: "オレンジ" };
+
+  //   オブジェクトの各プロパティに対する繰り返し処理
+  // key: オブジェクトのプロパティが一つずつ渡される
+  // obj: オブジェクトや配列を設定できる
+  //   for inで渡される要素の順番は担保されていない
+  for (const key in fruits) {
+    console.log(`キー${key} 値:${fruits[key]}`);
+  }
+</script>
