@@ -1,0 +1,22 @@
+<script>
+  // try: 例外が発生する可能性のある処理をここに書く。もし例外が発生した場合はその時点でcatchブロックに処理が移行する
+  try {
+    // 存在しない関数を実行
+    nonExistingFunction();
+    // tryブロック内の以降のコードは実行されない
+    console.log("nonExistingFunctionでの例外により、これは実行されません");
+
+    // catch: 例外が発生した処理をここに書く。
+  } catch (error) {
+    // console.error()はエラー表示の形式でコンソールに文字を出力する関数
+    console.error("noExistingFunctionは存在しないため、例外が発生しました");
+    console.error("エラータイプ" + error.name);
+    console.error("エラーメッセージ：" + error.message);
+
+    // finally: 例外の発生有無にかかわらず、実行したいコードを記述する。ここは必ず実行される
+  } finally {
+    console.log("後処理の記述が必要な場合はここに記述します");
+  }
+
+  console.log("例外が発生しても後続のコードが実行されます");
+</script>
