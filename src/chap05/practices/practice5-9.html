@@ -1,0 +1,12 @@
+<script>
+  // skip以外は加算する
+  const obj = { prop1: 10, prop2: 20, skip: 20, prop3: 23, prop4: 47 };
+  let sum = 0;
+  for (const key in obj) {
+    // skipじゃなければsumに値を追加していく
+    if (key !== "skip") {
+      sum += obj[key];
+    }
+  }
+  console.log(sum);
+</script>
