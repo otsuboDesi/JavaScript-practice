@@ -1,0 +1,6 @@
+<script>
+  const arr = [1, 2, 3, 4];
+  //   配列の length プロパティが列挙可能(enumerable)かどうかを確認
+  const descriptor = Reflect.getOwnPropertyDescriptor(arr, "length");
+  console.log(descriptor.enumerable);
+</script>
