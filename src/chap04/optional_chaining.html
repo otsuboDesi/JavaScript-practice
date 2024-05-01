@@ -1,0 +1,19 @@
+<script>
+  const person = {
+    name: "独習 太郎",
+    age: 28,
+    parents: {
+      mother: "Sara",
+      father: "Jphn",
+    },
+  };
+  // personオブジェクトにはsiblingsというプロパティが存在しないため、undefinedを出力
+  console.log(person.siblings);
+  // optional chaining
+  //  person.siblingsがundefinedまたはnullの場合、lengthプロパティにアクセスしようとせずに直ちにundefinedを返す。これにより、TypeErrorを防ぐ。
+  console.log(person.siblings?.length);
+  // この行はTypeErrorを引き起こす。
+  // person.siblingsがundefinedであり、undefinedにはlengthというプロパティが存在しない。
+  // プログラムはここでエラーにより停止し、以降のコードは実行されない。
+  console.log(person.siblings.length);
+</script>

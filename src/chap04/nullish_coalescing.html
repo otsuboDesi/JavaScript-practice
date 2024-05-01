@@ -1,0 +1,15 @@
+<script>
+  //  Null合体演算子
+  // 左側のオペランドが null または undefined の場合にのみ右側のオペランドの値を返し、それ以外の場合には左側のオペランドの値を返す。
+  let val = null;
+  // null または undefined にのみ反応
+  val = val ?? "初期値";
+  console.log(`val [${val}]`);
+
+  let num = 10;
+  // null undefined以外は左のオペランドを返す
+  num = num ?? 10;
+  console.log(`num [${num}]`);
+
+  // 論理OR演算子 (||) と似ているが、|| は左側の値が "falsy"（偽として評価される値）であれば右側の値を返す。
+</script>
