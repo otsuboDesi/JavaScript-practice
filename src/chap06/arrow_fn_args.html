@@ -1,0 +1,18 @@
+<script>
+  const hello = function () {
+    // 無名関数ではargumentsを使用できる
+    // arguments[0]は配列風のオブジェクト
+    console.log("こんにちは、" + arguments[0]);
+  };
+
+  hello("独習太郎");
+  output: "こんにちは、独習太郎";
+
+  //   arrow関数ではargumentsを使用できない
+  //   const hello = () => {
+  //     console.log("こんにちは、" + arguments[0]);
+  //   };
+
+  //   hello("独習太郎");
+  //   output: [ERROR] arrow_fn_args.html:13 Uncaught ReferenceError: arguments is not defined
+</script>
