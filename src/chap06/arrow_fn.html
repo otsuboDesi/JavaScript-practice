@@ -1,0 +1,49 @@
+<script>
+  // 無名関数
+  setTimeout(function () {
+    console.log("こんにちは");
+  }, 1000);
+
+  //   アロー関数
+  setTimeout(() => console.log("こんにちは"));
+
+  //   1.引数がない場合:
+  // ()=> { 関数の本文 }
+  // function() { 関数の本文 }
+
+  // 2. 引数が1つの場合
+  //  arg => { 関数の本文 }
+  // function(arg) { 関数の本文 }
+
+  // 3. 引数が複数の場合
+  // (arg1, arg2,...) => { 関数の本文 }
+  // function(arg1, arg2,...) => { 関数の本文 }
+
+  //   4.関数の本文が1行の場合
+  // (arg1,arg2,...) => 関数の本文
+
+  // 無名関数の場合
+  // function (arg1,arg2,...) {
+  // return 関数の本文
+  // }
+
+  // 5.関数の本文が複数行の場合
+  //  (arg1,arg2,...) => {
+  //  関数の本文
+  // return 戻り値
+  // }
+
+  // 無名関数の場合
+  // function(arg1,arg2,...) {
+  //  関数の本文
+  // return 戻り値
+  // }
+
+  //   6.関数の本文が1行かつ、戻り値がオブジェクトの場合
+  // (arg1,arg2,...) => ({ key1: val1, key2: val2})
+
+  // 無名関数の場合
+  // function(arg1,arg2,...){
+  //   return { key1: val1, key2: val2}
+  // }
+</script>
