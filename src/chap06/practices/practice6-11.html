@@ -1,0 +1,27 @@
+<script>
+  // 1. 以下を引数がなく関数の本文が一行に書き換える
+  // const hello = function(){
+  //     console.log("こんにちは")
+  // }
+  const hello = () => console.log("こんにちは");
+  hello();
+
+  //   2. 引数が１つで関数の本文が一行に書き換える
+  //   const double = function (num) {
+  //     return num * 2;
+  //   };
+
+  const double = (num) => num * 2;
+  console.log(double(10));
+
+  //   3.無名関数を使ったコールバック関数に書き換える
+  //   setTimeout(
+  //     function (name) {
+  //       console.lgo("こんにちは、" + name);
+  //     },
+  //     3000,
+  //     "独習太郎"
+  //   );
+
+  setTimeout((name) => console.log("こんにちは、" + name), 3000, "独習太郎");
+</script>
