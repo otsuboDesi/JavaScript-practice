@@ -1,0 +1,14 @@
+<script>
+  // 1. 関数宣言より前で関数を呼び出せることを確認
+  hello();
+
+  function hello() {
+    console.log("hello");
+  }
+
+  // 2．関数式の記述より前で関数を呼び出そうとするとエラーが発生することを確認
+  bye();
+  const buy = function () {
+    return console.log("bye");
+  };
+</script>
