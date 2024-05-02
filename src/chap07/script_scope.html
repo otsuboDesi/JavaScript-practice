@@ -1,0 +1,12 @@
+<script>
+  // varで定義されたものはグローバルスコープ、let constで定義されたらスクリプトスコープ
+  //   Windowsオブジェクトのプロパティとして格納されることはない
+  // グローバルスコープと同様にスクリプトスコープに配置された変数や関数もコード内のどこからでも参照可能なため、基本的にはグローバルスコープと区別せずに使うことが出来る
+  let scriptVal = "スクリプトスコープの変数";
+  const scriptFn = function () {
+    return "スクリプトスコープの関数";
+  };
+</script>
+<script>
+  console.log(scriptVal, scriptFn());
+</script>
