@@ -1,0 +1,19 @@
+<script>
+  const obj1 = { num: 3 };
+  const obj2 = { num: 3 };
+
+  let num = 3;
+
+  function fn(object1Arg, object2Arg, numberArg) {
+    object1Arg = { num: 5 };
+    object2Arg.num = 5;
+    numberArg = 5;
+  }
+
+  fn(obj1, obj2, num);
+
+  console.log("obj1: {num: 3}", obj1.num);
+  console.log("obj2: {num: 5}", obj2.num);
+  // 関数が呼び出されたときに渡された引数の値を関数内で変更しているだけであり、この値の変更は関数内でのみ変更され、関数の外部には影響を与えない
+  console.log("num: 3", num);
+</script>
