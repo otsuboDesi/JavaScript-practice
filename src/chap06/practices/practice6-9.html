@@ -1,0 +1,21 @@
+<script>
+  function plus(a, b) {
+    return a + b;
+  }
+  function minus(a, b) {
+    return a - b;
+  }
+
+  //   使用する時にはcallbackに関数が入る
+  function calc(val1, val2, callback) {
+    // ここに処理を記述しなさい
+    resultを定義しcallback関数の引数にval1, val2をわたす;
+    const result = callback(val1, val2);
+    // コンソールで出力する
+    console.log(result);
+  }
+
+  calc(1, 2, plus);
+  calc(10, 2, plus);
+  calc(10, 2, minus);
+</script>

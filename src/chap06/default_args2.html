@@ -1,0 +1,16 @@
+<script>
+  function hello(greeting = "こんにちは", person = "独習太郎") {
+    console.log(greeting + person);
+  }
+  //   引数にundefinedを渡した場合
+  hello(undefined, undefined);
+  // この時は初期値を設定する
+
+  //   引数にnullを渡した場合
+  hello(null, null);
+  // nullが引数の時は初期値による設定が行われない
+
+  //   引数を紹介しますした場合
+  hello();
+  // この時は初期値を設定する
+</script>

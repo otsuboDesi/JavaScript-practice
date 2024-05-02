@@ -1,0 +1,11 @@
+<script>
+  function fn(obj) {
+    // 変数が null または undefined の場合にのみ右側の値をその変数に代入
+    obj.arg1 ??= "初期値1";
+    obj.arg2 ??= "初期値2";
+    console.log(obj.arg1, obj.arg2);
+  }
+
+  const params = { arg2: "引数2" };
+  fn(params);
+</script>

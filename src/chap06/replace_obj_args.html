@@ -1,0 +1,12 @@
+<script>
+  const obj = { val: 1 };
+
+  function fn(obj2) {
+    // objとは違うオブジェクトを設定する
+    obj2 = { val: 2 };
+  }
+
+  // 関数内の変更は影響しない
+  fn(obj);
+  console.log(obj.val);
+</script>

@@ -1,0 +1,14 @@
+<script>
+  let externalVal = 3;
+
+  function add5(internalVal) {
+    return internalVal + 5;
+  }
+
+  //   2行目の変数が引数に入る
+  const result = add5(externalVal);
+  console.log(result);
+
+  //   関数の内の引数は関数外ではアクセスできない
+  console.log(internalVal);
+</script>
