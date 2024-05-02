@@ -1,0 +1,11 @@
+<script>
+  // add()をFunctionコンストラクタから作成
+  const add = new Function("val1", "val2", "return val1 + val2");
+
+  const result = add(1, 2);
+  //   output:3
+
+  console.log(result);
+
+  // Functionコンストラクタは引数や関数の本文を文字列として定義できる。
+</script>
