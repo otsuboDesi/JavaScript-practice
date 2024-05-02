@@ -1,0 +1,13 @@
+<script>
+  // blobalスコープに配置された変数や関数は、コードのどこからでも参照可能な状態になります
+  //   トップレベルで変数を宣言
+  var globalVal = "グローバル変数";
+  //   トップレベルで関数を宣言
+  function globalFn() {
+    return "グローバル関数";
+  }
+</script>
+<script>
+  // グローバルスコープは共有される
+  console.log(globalVal, globalFn());
+</script>
