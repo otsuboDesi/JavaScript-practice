@@ -1,0 +1,16 @@
+<script>
+  // 関数とは実行可能(関数の後ろにある()があると実行できる)なオブジェクト
+  function fn() {}
+
+  //   オブジェクトのようにプロパティの追加が可能
+  fn.fullName = "独習太郎";
+
+  //   メソッドの追加も可能
+  fn.hello = function () {
+    console.log("こんにちは、独習太郎");
+  };
+
+  console.log(fn.fullName);
+
+  fn.hello();
+</script>
