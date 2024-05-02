@@ -1,0 +1,13 @@
+<!-- 関数宣言で関数の定義を行った場合の時の重複を避ける方法 -->
+<!-- ES6で追加されたESModulesという機能を有効化することで重複した関数名が使われたときにエラーを発生させることが出来る -->
+<script type="module">
+  function chofuku() {
+    console.log("hello");
+  }
+
+  // エラーが発生する
+  //   error message: Uncaught SyntaxError: Identifier 'chofuku' has already been declared
+  function chofuku() {
+    console.log("bye");
+  }
+</script>
