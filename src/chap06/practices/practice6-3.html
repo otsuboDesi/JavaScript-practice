@@ -1,0 +1,32 @@
+<script>
+  // 1.
+  // function hello() {
+  //   return "Hello World";
+  // }
+
+  // console.log(hello());
+
+  // // 2.
+  // function hello2(personName) {
+  //   if (typeof personName === "string") {
+  //     return console.log(`こんにちは${personName}`);
+  //   }
+  //   console.log("引数に文字列を渡してください");
+  // }
+
+  // hello2("Yuki");
+  // hello2(1);
+
+  // 3.
+  function fn1() {
+    const val = 1 + 1;
+    console.log(val);
+  }
+  // output: 2 -> wrong: returnが書かれていないのでundefinedになる
+
+  function fn2() {
+    console.log(7 % 3);
+    return;
+  }
+  // output: 2 -> wrong: returnでは何も返していないのでundefinedになる
+</script>
