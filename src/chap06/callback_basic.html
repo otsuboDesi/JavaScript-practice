@@ -1,0 +1,23 @@
+<script>
+  // callback()を受け取る関数
+  function saySomething(callback) {
+    // callback()の実行
+    const result = callback();
+    console.log(`${result}, 独習太郎！`);
+  }
+
+  function hello() {
+    return "こんにちは";
+  }
+  function bye() {
+    return "さようなら";
+  }
+  //   callback()を引数に設定して関数を実行
+  //   helloをコールバック関数としてsaySomethingに渡しているので()が必要ない
+  saySomething(hello);
+  //   callback()を引数に設定して関数を実行
+  saySomething(bye);
+
+  // この書き方はhello()の実行結果”こんにちは”を渡しているのでエラーが発生する
+  //   saySomething(hello())
+</script>
