@@ -1,0 +1,27 @@
+<script>
+  function fnA() {
+    let valA = "fnA内の値";
+    const subA = function () {
+      console.log("fnA内の関数");
+    };
+    console.log(valA);
+    subA();
+  }
+
+  //   valA, subA()は参照と実行可能
+  fnA();
+
+  function fnB() {
+    //   fnA()のスコープ外の為エラーが発生する
+    console.log(valA);
+    //   fnA()のスコープ外の為エラーが発生する
+    subA();
+  }
+
+  fnB();
+
+  //   fnA()のスコープ外の為エラーが発生する
+  console.log(valA);
+  //   fnA()のスコープ外の為エラーが発生する
+  subA();
+</script>

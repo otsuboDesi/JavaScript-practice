@@ -1,0 +1,25 @@
+<script>
+  // 実行中のコードから見た外側のコードをレキシカルスコープと呼ぶ
+  //   関数や変数が定義された文脈（コード内の位置）に基づいてそのスコープが決定されることを意味
+  let scriptVal = "スクリプトスコープの変数";
+
+  function fn() {
+    let fnVal = "関数スコープの変数";
+    // ifブロック内（ブロックスコープ）: ただし、let/constで宣言された変数以外は影響を受けない。
+    if (true) {
+      // レキシカルスコープの変数であるため参照可能
+      console.log(scriptVal, fnVal);
+      //   レキシカルスコープであるグローバルスコープ関数の為実行可能
+      console.log(scriptFn());
+      //   scriptFn内で宣言されているのでレキシカルスコープの変数ではありません。そのためエラーが発生
+      console.log(sVal);
+    }
+  }
+
+  function scriptFn() {
+    let sVal = "scriptFnの変数";
+    return "scriptFnの実行結果";
+  }
+
+  fn();
+</script>

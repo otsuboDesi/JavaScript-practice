@@ -1,0 +1,25 @@
+<script>
+  // global scope: どこからでもアクセス可能
+  var a;
+  //   script scope: スクリプト全体からアクセス可能
+  let b;
+
+  //  grobal scope
+  function fn1() {
+    // function scope: fn1 とその内部からアクセス可能
+    var c;
+    // function scope: fn1 とその内部からアクセス可能
+    let d;
+
+    if (true) {
+      var e;
+      // block scope: この if ブロック内からのみアクセス可能
+      let f;
+      // function scope
+      function fn2() {}
+    }
+  }
+
+  // script scope
+  const fn3 = function () {};
+</script>

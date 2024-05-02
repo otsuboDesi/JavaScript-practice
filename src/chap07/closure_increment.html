@@ -1,0 +1,16 @@
+<script>
+  function incrementFactory() {
+    let count = 0;
+    // 無名関数をincrementFactoryの実行結果として返す
+    return function () {
+      // レキシカルスコープのcount値を使用
+      console.log(++count);
+    };
+  }
+
+  const inncrement = incrementFactory();
+  //   この関数の実行は無名関数の実行を意味する
+  inncrement();
+  inncrement();
+  inncrement();
+</script>

@@ -1,0 +1,20 @@
+<script>
+  //1. レキシカルスコープは実行中のコードから見た外側のコードのこと
+
+  // 2.
+  //  エラーが発生した箇所と原因を答えなさい。最低限の範囲にスコープを保つようにコードを修正しなさい
+  let rand;
+  function chance() {
+    // resultを追加
+    let result;
+    rand = Math.random();
+    if (rand < 0.5) {
+      result = "成功";
+    } else {
+      result = "失敗";
+    }
+    // error: resultは定義されていない為。スコープ外
+    return result;
+  }
+  console.log(chance());
+</script>

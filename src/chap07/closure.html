@@ -1,0 +1,18 @@
+<script>
+  // レキシカルスコープの変数の値を使用している関数が戻り値となる場合
+
+  //  本来であればこの関数の実行終了と主に引数が保持している値はメモリから自動で削除されるが、
+  // innerFnがこの関数の戻り値として実行元に返されるため、１５行目のように外部から実行される可能性がある。
+  // そういうときは削除対象にならず残り続ける状態になる。これがクロージャ
+  function factory(greeting) {
+    function innerFn(name) {
+      // レキシカルスコープの変数greetingを使用
+      console.log(greeting + " " + name);
+    }
+    // 関数を実行結果として返す
+    return innerFn;
+  }
+
+  const hello = factory("こんちには");
+  hello("太郎");
+</script>
