@@ -1,0 +1,31 @@
+<script>
+  class Human {
+    // 静的プロパティを定義
+    static TYPE = "普通の人";
+    // 静的メソッドを定義
+    static staticMove() {
+      console.log(Human.TYPE + "は歩いて移動します");
+    }
+
+    constructor(name) {
+      // コンストラクタでインスタンスのnameプロパティに引数のnameを設定
+      this.name = name;
+    }
+
+    // インスタンスメソッドを生成
+    move() {
+      console.log(this.name + "は歩いて移動します");
+    }
+  }
+
+  // Humanクラスのインスタンスを生成し、太郎という名前を設定
+  const taro = new Human("太郎");
+  // Humanクラスの静的メソッドstaticMoveを呼び出し、静的プロパティTYPEを使用してメッセージを表示
+  Human.staticMove();
+
+  // Humanクラスの静的プロパティTYPEを表示
+  console.log(Human.TYPE);
+
+  // taroインスタンスのmoveメソッドを呼び出し、インスタンスのnameプロパティを使用してメッセージを表示
+  taro.move();
+</script>
