@@ -28,4 +28,22 @@
 
   // taroインスタンスのmoveメソッドを呼び出し、インスタンスのnameプロパティを使用してメッセージを表示
   taro.move();
+
+  //   インスタンスメソッド内から静的プロパティや静的メソッドを利用
+  class TestCls {
+    static STATIC_PROP = "静的プロパティ";
+    static staticMethod() {
+      return "静的メソッド";
+    }
+    // インスタンスメソッドを定義
+    method() {
+      // このインスタンスのコンストラクタを通じて静的プロパティにアクセス
+      console.log(this.constructor.STATIC_PROP);
+      // このインスタンスのコンストラクタを通じて静的メソッドにアクセスし、その結果を表示
+      console.log(this.constructor.staticMethod());
+    }
+  }
+
+  const test = new TestCls();
+  test.method();
 </script>
