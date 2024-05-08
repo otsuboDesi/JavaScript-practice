@@ -1,0 +1,21 @@
+<script>
+  window.name = "花子";
+
+  const taro = {
+    name: "太郎",
+    hello: function () {
+      // taroオブジェクト内でhello関数が定義されており、この関数内でthis.nameを参照。
+      // もしhello関数がtaro.hello()として直接呼ばれた場合、thisはtaroオブジェクトを指し、出力は「こんにちは太郎」になる。
+      console.log("こんにちは" + this.name);
+    },
+  };
+
+  // taroオブジェクトからhello関数を切り離してhelloWho変数に代入
+  // helloWhoはただの関数参照であり、元々のtaroオブジェクトとの関連がなくなる。
+  const helloWho = taro.hello;
+
+  //   この呼び出しは、どのオブジェクトにも属していない状態（つまりグローバルコンテキスト）
+  // ブラウザ環境においてグローバルコンテキストはwindowオブジェクトになる
+  helloWho();
+</script>
+0 comments on commit d7717ae
