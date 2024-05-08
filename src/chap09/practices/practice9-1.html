@@ -1,0 +1,35 @@
+<script>
+  class User {
+    constructor(username, password, roll) {
+      // コンストラクタでusernameとpasswordを受け取り、インスタンスのプロパティに設定
+      this.username = username;
+      this.password = password;
+      this.roll = roll;
+    }
+    // 次にloginメソッドが続いて実行され、ユーザー名とパスワードを含むログイン情報がコンソールに表示される
+    login() {
+      // thisを通して他のメソッドを実行
+      this.check();
+      console.log(`ログイン [${this.username}/ ${this.password}]`);
+    }
+    // checkメソッドが最初に呼び出される
+    check() {
+      console.log(`ログイン情報をチェックします`);
+    }
+
+    checkRoll() {
+      if (this.roll === "admin") {
+        console.log("管理者権限です");
+      } else {
+        console.log("一般ユーザーです");
+      }
+    }
+  }
+
+  const taro = new User("独習太郎", "taro-pwd");
+  taro.checkRoll();
+
+  // 管理者権限の場合
+  const hanako = new User("独習 花子", "hanako-pwd", "admin");
+  hanako.checkRoll();
+</script>
