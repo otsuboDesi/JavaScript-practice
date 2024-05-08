@@ -1,0 +1,20 @@
+<script>
+  const taro = { name: "太郎" };
+
+  function hello(greting, name) {
+    console.log(`${greeting}, ${name}`);
+  }
+
+  //   apply methodの引数は配列
+  // thisや引数を束縛して新しい関数を作成しその関数を即時に実行する
+  //   hello関数でthisを使っていないため第一引数はnullになっている
+  hello.apply(null, ["こんにちは", "太郎"]);
+
+  const vals = [1, 2, 3];
+  //   一番大きな数とを確認
+  console.log(Math.max(vals[0], vals[1], vals[2]));
+  //   これをapply methodで書く
+  //   thisは使用しないためnullを第一引数に渡す
+  //   配列の値を一つずつ引数に指定する必要がなくなり、より簡潔にコードを記述できる
+  console.log(Math.max.apply(null, vals));
+</script>
