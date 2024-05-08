@@ -1,0 +1,11 @@
+<script>
+  // classで定義したメソッドはインスタンスから実行できる
+  class TestCl {
+    method(arg) {
+      console.log(`引数:[${arg}]でメソッドを実行`);
+    }
+  }
+
+  const test = new TestCl();
+  test.method("テスト");
+</script>
