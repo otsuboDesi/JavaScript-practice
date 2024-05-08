@@ -1,0 +1,16 @@
+<script>
+  // callstackはinspectのsourcesで確認できる
+  // callstackはコードがどこから呼び出されてどのような状態で実行されたのかを知るために有効な手段なのでデバッグの1つの手段として活用できる。
+  function first() {
+    let firstVal = "firstコンテキスト";
+    second();
+  }
+
+  function second() {
+    let secondVal = "secondコンテキスト";
+    // この時点でコードの実行を停止する
+    debugger;
+  }
+
+  first();
+</script>

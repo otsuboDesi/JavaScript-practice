@@ -1,0 +1,16 @@
+<script>
+  function hello(greeting) {
+    console.log(greeting + this.name);
+  }
+
+  const taro = {
+    name: "太郎",
+  };
+
+  //   bindでthisと引数を束縛
+  // hello.bind -> this、または引数を束縛したい関数かメソッドを指定
+  // taro -> 関数hello内のthisの参照先にしたいオブジェクトを指定する
+  // "こんにちは" -> bindでは関数helloに渡す引数も指定できる
+  const helloTaro = hello.bind(taro, "こんにちは");
+  helloTaro();
+</script>

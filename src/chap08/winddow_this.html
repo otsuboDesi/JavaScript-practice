@@ -1,0 +1,20 @@
+<script>
+  // メソッドとして実行された場合のthis
+  const taro = {
+    name: "太郎",
+    hello: function () {
+      console.log("こんにちは" + this.name);
+    },
+  };
+  taro.hello();
+
+  // 関数として実行された場合のthis
+  window.name = "花子";
+
+  function hello() {
+    // このthisはwindowオブジェクトのnameプロパティを参照している
+    console.log("こんにちは" + this.name);
+  }
+
+  hello();
+</script>

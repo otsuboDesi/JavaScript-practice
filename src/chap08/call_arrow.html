@@ -1,0 +1,11 @@
+<script>
+  // hello関数からレキシカルスコームはグローブスコープになる
+  window.name = "花子";
+
+  const hello = () => {
+    console.log("こんにちは" + this.name);
+  };
+
+  //   アロー関数はthisの束縛はできないのでbindやcallによるthisの束縛も使用できない
+  hello.call({ name: "太郎" });
+</script>

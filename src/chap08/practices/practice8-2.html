@@ -1,0 +1,23 @@
+<script>
+  // グローバル変数を設定
+  window.name = "独習太郎";
+
+  // グローバル関数を定義。
+  const which = () => {
+    console.log(this.name);
+  };
+
+  // オブジェクトを定義、プロパティを設定
+  const hanako = {
+    name: "独習花子",
+    // callNameメソッドを定義。このメソッド内でwhich関数を呼び出す。
+    callName() {
+      which();
+    },
+  };
+
+  // hanakoオブジェクトのcallNameメソッドを呼び出す。
+  // which関数内のthisはグローバルオブジェクトwindowを指すため、
+  // window.nameがコンソールに出力される。
+  hanako.callName();
+</script>

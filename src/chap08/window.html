@@ -1,0 +1,16 @@
+<script>
+  // topレベルで実行した場合のthisはwindowオブジェクトを参照する
+  console.log(this === window);
+
+  // window.は省略してもしなくてもどちらでもok
+  // ブラウザがあらかじめ用意してくれているオブジェクト関数をプロパティに持つ特殊なp武ジェクト(グローバルオブジェクト)
+  // どこからでも参照できてwindow.の部分を省略して記述することもできる(window.console.log -> console.log)
+  window.console.log("こんにちは");
+  console.log("さようなら");
+
+  function fn() {
+    console.log("はい、さようなら");
+  }
+
+  fn();
+</script>
