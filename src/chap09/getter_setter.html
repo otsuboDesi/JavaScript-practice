@@ -18,23 +18,14 @@
       // ageが取得された場合には値が保持されている_ageの値を返す
       return this._age;
     }
-    set gender(value) {
-      if (value === "男" || value === "女" || value === "トランスジェンダー") {
-        this._gender = value;
-      } else {
-        throw new Error(
-          'genderプロパティには"男"、"女"、または"トランスジェンダー"を設定してください。'
-        );
-      }
-    }
-    get gender() {
-      // genderが取得された場合には値が保持されている _genderの値を返す
-      return this._gender;
-    }
   }
   const taro = new Person("太郎", "独習");
   // methodの時のように()は必要ない
-  taro.gender = "男";
-  console.log(taro.gender);
-  taro.gender = "不明"; // エラーが発生！！
+  console.log(taro.fullname);
+  // セッターを通して文字列で値を設定
+  taro.age = "18";
+  // ゲッターを通して値を取得
+  console.log(typeof taro.age);
+  // オブジェクトの状態を確認
+  console.log(taro);
 </script>
