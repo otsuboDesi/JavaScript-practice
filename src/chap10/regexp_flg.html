@@ -1,0 +1,26 @@
+<script>
+  // gフラグ (global): 一致したすべての部分を検索
+  const str = "return request resource";
+  str.match(/re\S+/); // gフラグなしでは最初に見つかった一致箇所のみを取得
+  // 結果　 ["return", ... ]
+  str.match(/re\S+/g); // gフラグを使用して、すべての一致箇所を取得
+  // 結果　["return", "request", "resource"]
+
+  // iフラグ (ignoreCase): 大文字と小文字を区別せずに一致を検索
+  /a/i.test("A"); // iフラグにより、大文字の'A'も小文字の'a'として認識されるため、結果は true
+
+  // mフラグ (multiline): 複数行のテキストで、各行の開始と終了を ^ と $ でそれぞれ認識
+  const multipleLines = `aaa
+bbb
+ccc`;
+  multipleLines.match(/^.+$/gm); // mフラグを使って各行の開始から終了までを一致させる
+  // 結果　["aaa", "bbb", "ccc"]
+
+  // sフラグ (dotAll): ドット(.)が改行文字にもマッチするようになる
+  /./.test("\n"); // 通常、ドット(.)は改行文字にマッチしないため、結果は false
+  /./s.test("\n"); // sフラグを使用すると、改行文字にもマッチするため、結果は true
+
+  // uフラグ (unicode): Unicode符号点の完全なセットをサポート
+  /^.$/.test("😁"); // 通常、サロゲートペアを考慮せずには、絵文字は1文字として扱われないため、結果は false
+  /^.$/u.test("😁"); // uフラグを使用すると、絵文字も1文字として正しく扱われるため、結果は true
+</script>
