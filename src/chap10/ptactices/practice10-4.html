@@ -1,0 +1,27 @@
+<script>
+  // 1.
+  // 郵便番号の形式に一致するかどうかを確認し、結果をコンソールに出力する関数
+  function checkPostCode(str) {
+    const postCodePattern = /^\d{3}-\d{4}$/;
+    const isValid = postCodePattern.test(str); // testメソッドを使って一致するかどうかを確認
+    console.log(isValid);
+  }
+
+  checkPostCode("001-0012");
+  checkPostCode("001-001");
+  checkPostCode("2.2-3042");
+  checkPostCode("wd3-2132");
+  checkPostCode("124-56789");
+
+  // 2.
+  // メールアドレスに対して .,_,- と半角英数字を許容する正規表現を作成する
+  function checkEmail(email) {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const isValid = emailPattern.test(email); // testメソッドを使って一致するかどうかを確認
+    console.log(isValid);
+  }
+  checkEmail("example000@gmail.com");
+  checkEmail("example-0.00@gmail.com");
+  checkEmail("example-0.00@ex.co.jp");
+  checkEmail("example/0.00@ex.co.jp");
+</script>
