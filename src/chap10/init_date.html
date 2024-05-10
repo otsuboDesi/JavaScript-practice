@@ -1,0 +1,30 @@
+<script>
+  // 現在時刻
+  let now = new Date();
+  console.log(now);
+
+  // ミリ秒で時刻指定
+  let date = new Date(24 * 60 * 60 * 1e3);
+  console.log(date);
+
+  //ISO8601
+  // 現地時刻（JST）
+  // タイムゾーンの設定なし(UTC -9)
+  const localTime = new Date("2021-05-04T02:35:00");
+  console.log(localTime.toISOString());
+
+  // 世界標準時を指定
+  // ZによりUTC時刻(Zを末尾に付けると世界標準時で時刻が取得される)
+  const utcTime = new Date("2021-05-04T02:35:00Z");
+  console.log(utcTime.toISOString());
+
+  // ハワイ時間を指定
+  // -10時間によりハワイ時刻(UTC +10)
+  const hawaiiTime = new Date("2021-05-04T02:35:00-10:00");
+  console.log(hawaiiTime.toISOString());
+
+  //  年月日などを引数に分けて数値で指定することも可能
+  //   この記法を使うときは月を数値で表すときは0~11までの整数値で表す。0は1月、11は12月になる
+  let date2 = new Date(2021, 0, 4, 2, 35, 0);
+  console.log(date);
+</script>
