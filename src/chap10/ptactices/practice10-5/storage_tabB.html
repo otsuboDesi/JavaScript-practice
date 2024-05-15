@@ -1,0 +1,9 @@
+<script>
+  sessionStorage.setItem("car", "白い車");
+  const car = sessionStorage.getItem("car") || localStorage.getItem("car");
+  //   まずsessionStorageから値を取得し、それが存在しない場合はlocalStorageから値を取得
+
+  sessionStorage.setItem("car", car);
+  console.log(sessionStorage.getItem("car"));
+  //   "白い車"
+</script>
