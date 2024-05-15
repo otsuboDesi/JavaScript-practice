@@ -1,0 +1,16 @@
+<script>
+  function replacer(prop, value) {
+    console.log(`prop[${prop}] value[`, value, "]");
+    return value;
+  }
+
+  const nestedObj = { a: { b: { c: 0 } } };
+  const jsonStr = JSON.stringify(nestedObj, replacer);
+  // JSON.stringifyを呼び出すと、内部でreplacer関数が以下の順序で呼び出されます：
+  // 1. オブジェクト全体に対して replacer("", { a: { b: { c: 0 } } });
+  // 2. aプロパティに対して replacer("a", { b: { c: 0 } });
+  // 3. bプロパティに対して replacer("b", { c: 0 });
+  // 4. cプロパティに対して replacer("c", 0);
+
+  console.log(jsonStr);
+</script>
