@@ -1,0 +1,26 @@
+<script>
+  // match(regex)
+  // 与えられた正規表現に一致する最初の部分を探し、その詳細情報を含む配列を返します。
+  "babcde".match(/a(b)c(d)e/);
+
+  // matchAll(regex)
+  // 与えられた正規表現に一致するすべての部分を検索し、それぞれの一致についての情報を含むイテレータを返します。
+  const it = "return request".matchAll(/re(\S+)/g);
+  for (const v of it) {
+    console.log(v); // 各一致の詳細をコンソールに出力します。
+  }
+
+  // replace(regex, replaceStr)
+  // 正規表現に一致する部分を指定した文字列で置換します。
+  "apple, lemon".replace(/([a-z]+), lemon/, "banana, $1"); // "apple" を "banana" に置換し、"lemon" の位置に "apple" を置きます。
+
+  // search(regex)
+  // 与えられた正規表現に一致する部分の最初のインデックスを返します。一致がない場合は-1を返します。
+  "text".search(/a/); // "a"が見つからないため、-1が返されます。
+  "hello, abc".search(/a/); // "a"が見つかる最初のインデックス、7が返されます。
+
+  // split([separator[, limit]])
+  // 指定した区切り文字（正規表現も可能）で文字列を分割し、配列として返します。
+  "return request response".split(/\s/); // 空白で文字列を分割します。
+  // 空白で分割
+</script>

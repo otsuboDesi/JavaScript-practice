@@ -1,0 +1,10 @@
+<script>
+  // ミリ秒
+  const dayUnit = 1000 * 60 * 60 * 24;
+  const yearEnd = new Date(2021, 11, 31);
+  const yearBegin = new Date(2022, 0, 1);
+  //   2つの日付の差分を取得 / 日単位に戻すためにミリ秒で割る
+  const diffDays = Math.abs(yearEnd - yearBegin) / dayUnit;
+
+  console.log(diffDays);
+</script>

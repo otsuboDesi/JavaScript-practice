@@ -1,0 +1,24 @@
+<script>
+  const fruits = {
+    banana: "うまい",
+    apple: "普通",
+    orange: "微妙",
+    other: { grape: "うまい" },
+  };
+
+  // 1. banana, orangeのプロパティのみ抽出してJSON文字列を作成
+  console.log(JSON.stringify(fruits, ["banana", "orange"]));
+
+  //   2. "うまい"フルーツのみを抽出してJSON文字列を作成する
+  //   JSON.stringifyのreplacer関数は、デフォルトで2つの引数（keyとvalue）を受け取る。ここで重要なのは、replacer関数のシグネチャが2つの引数を取るように定義されていることです。
+  // 2つの引数を取る関数でないと、JSON.stringifyの内部で適切に動作しない可能性がある。
+  function getYumFruit(prop, val) {
+    // 最初にオブジェクト全体を呼び、undefinedを返しJSON文字列に何も含まれなくなってしまうのでtypeの確認を行う必要がある
+    if (typeof val === "string" && val !== "うまい") {
+      return;
+    }
+    return val;
+  }
+  const jsonStr = JSON.stringify(fruits, getYumFruit);
+  console.log(jsonStr);
+</script>
