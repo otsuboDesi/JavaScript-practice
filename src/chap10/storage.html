@@ -1,0 +1,29 @@
+<script>
+  // setItem(key, value)
+  localStorage.setItem("apple", "リンゴ");
+
+  // getItem(key)
+  localStorage.getItem("apple");
+
+  //removeItem(key)
+  localStorage.setItem("apple", "リンゴ");
+  localStorage.removeItem("apple");
+  console.log(localStorage.getItem("apple"));
+
+  //clear()
+  localStorage.setItem("apple", "リンゴ");
+  localStorage.setItem("banana", "バナナ");
+  localStorage.clear();
+  //ストレージに保存されているキーと値のペアの長さを取得
+  console.log(localStorage.length);
+
+  //key(index)
+  localStorage.setItem("apple", "リンゴ");
+  localStorage.setItem("banana", "バナナ");
+  //全てのキーと値を出力
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    const value = localStorage.getItem(key);
+    console.log(key, value);
+  }
+</script>
