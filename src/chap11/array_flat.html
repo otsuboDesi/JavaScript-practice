@@ -1,0 +1,14 @@
+<script>
+  // flat: 多次元配列の平坦化(次元を減らす)
+
+  // 配列の中に配列が存在する
+  const arry3D = [1, [2], 3, [4, [5]]];
+
+  //   １次元分、平坦化を行った配列を返す
+  const arry2D = arry3D.flat();
+  console.log(arry2D);
+
+  //   ２次元分、平坦化を行った配列を返す
+  const arry1D = arry3D.flat(2);
+  console.log(arry1D);
+</script>
