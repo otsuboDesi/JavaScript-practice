@@ -1,0 +1,46 @@
+<script>
+  // { タイトル, 優先順位, 完了か否か }
+  const todos = [
+    { title: "晩御飯", priority: 2, completed: false },
+    { title: "ゴミ出し", priority: 1, completed: true },
+    { title: "食材の買い出し", priority: 3, completed: false },
+    { title: "洗濯", priority: 2, completed: true },
+    { title: "録画の視聴", priority: 1, completed: false },
+  ];
+
+  // 1.Todoリストを特定のフォーマットで出力
+  //   オブジェクトなので｛｝で囲んだ
+  function checkedTasks({ title, completed }) {
+    if (completed) {
+      console.log(`${title}は完了！`);
+    } else {
+      console.log(`${title}をやらないと！`);
+    }
+  }
+  todos.forEach(checkedTasks);
+
+  // 2.完了していないタスクの抽出して新しいリストを作成
+  const notCompletedTasks = todos.filter(({ completed }) => {
+    return !completed;
+  });
+  console.log(notCompletedTasks);
+
+  // 3.タスクを優先順位で並び替え
+  function descending(val1, val2) {
+    return val2.priority - val1.priority;
+  }
+  console.log(notCompletedTasks.sort(descending));
+
+  // 4.関数（printTodo）の作成
+  function printoTodo(todos) {
+    todos.forEach(({ title, completed }) => {
+      if (completed) {
+        console.log(`${title}は完了！`);
+      } else {
+        console.log(`${title}をやらないと！`);
+      }
+    });
+  }
+
+  printoTodo(notCompletedTasks);
+</script>
