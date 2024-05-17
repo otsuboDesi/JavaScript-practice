@@ -1,0 +1,14 @@
+<script>
+  // map: コールバック関数の戻り値を要素に取る新しい配列を返す
+  const arry = [1, 2, 3, 4, 5];
+
+  // callback関数を定義
+  function multiply5(value) {
+    // 新しい配列に追加したい値
+    return value * 5;
+  }
+
+  // 新しい配列を返す
+  const newArry = arry.map(multiply5);
+  console.log(newArry);
+</script>
