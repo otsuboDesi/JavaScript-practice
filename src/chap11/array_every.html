@@ -1,0 +1,11 @@
+<script>
+  // every: 全ての要素がコールバック関数で実装された条件でtrueとなるかどうかをテストする。
+  // すべての条件が一致した場合には結果がtrueになり、それ以外はfalseになる
+  const arry = [1, 2, 3, 4, 5];
+  const result1 = arry.every((value) => value > 0);
+  // true or falseを返す
+  console.log(result1);
+
+  const result2 = arry.every((value) => value > 3);
+  console.log(result2);
+</script>
