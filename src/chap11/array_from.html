@@ -1,0 +1,11 @@
+<script>
+  // from : 配列風オブジェクトや反復可能オブジェクトを配列に変換
+  //   Set(): 重複しない値の集合を管理する
+  const set = new Set();
+  set.add(1);
+  set.add(2);
+  set.add(3);
+
+  const convertedArray = Array.from(set);
+  console.log(convertedArray);
+</script>
