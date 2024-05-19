@@ -1,0 +1,19 @@
+<script>
+  // instansof: インスタンスの生成元クラスを確認する
+  //   booleanを返す
+  class Parent {}
+  //  Child という名前のクラスを定義し、Parentクラスを拡張。
+  // これにより、ChildクラスはParentクラスを継承し、Parentクラスのプロパティとメソッドを持ちます。
+  class Child extends Parent {}
+
+  //   obj は Child クラスおよび Parent クラスのインスタンス
+  const obj = new Child();
+  // obj が Child クラスのインスタンスであるかどうかをチェック
+  console.log(obj instanceof Child);
+  //   objがParentクラスのインスタンスであるかどうかをチェック。
+  // ChildクラスはParentクラスを継承しているため、objは間接的にParentクラスのインスタンスでもある。
+  console.log(obj instanceof Parent);
+
+  //   HACK:JavaScriptでは明示的に併称元クラスを記述しない場合は、自動的にObjectクラスを継承する
+  console.log(obj instanceof Object);
+</script>
