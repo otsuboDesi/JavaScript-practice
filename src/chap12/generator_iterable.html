@@ -1,0 +1,29 @@
+<script>
+  // Iterableクラスの定義
+  class Iterable {
+    // Symbol.iteratorメソッドのジェネレータを定義
+    // * は、ジェネレータ関数を定義するための記号(ES6の省略記法)
+    *[Symbol.iterator]() {
+      // オブジェクトのプロパティを反復処理
+      for (let key in this) {
+        // キーとその値のペアをyieldする
+        yield [key, this[key]];
+      }
+    }
+  }
+
+  // Iterableクラスのインスタンスを作成
+  const fruits = new Iterable();
+  // fruitsオブジェクトにプロパティを追加
+  fruits.apple = "リンゴ";
+  fruits.banana = "バナナ";
+
+  // for...ofループを使ってfruitsオブジェクトのプロパティを反復処理
+  for (const row of fruits) {
+    // 各プロパティのキーと値をコンソールに出力
+    console.log(row[0], row[1]);
+  }
+  // 出力:
+  // apple リンゴ
+  // banana バナナ
+</script>
