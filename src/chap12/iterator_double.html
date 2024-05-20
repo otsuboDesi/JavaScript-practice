@@ -1,0 +1,44 @@
+<script>
+  // イテレータの定義（渡された値を2倍にする）
+  function doubleIterator() {
+    let index = 0; // インデックスを初期化
+    let arry = this; // インスタンスにアクセスする際にはthisを使用
+    return {
+      // nextメソッドを定義
+      next() {
+        // インデックスが配列の長さより小さい場合には反復処理を継続
+        if (index < arry.length) {
+          return {
+            done: false, // 反復が継続することを示す
+            value: arry[index++] * 2, // 現在の値を2倍にして返す
+          };
+        } else {
+          return {
+            done: true, // 反復が終了したことを示す
+          };
+        }
+      },
+    };
+  }
+
+  // イテレータ登録前の確認
+  for (let item of [1, 2, 3]) {
+    console.log(item); // 配列の値がそれぞれitemに渡される
+  }
+  // 出力:
+  // 1
+  // 2
+  // 3
+
+  // 既存のイテレータを上書き
+  Array.prototype[Symbol.iterator] = doubleIterator;
+
+  // イテレータ登録後の確認
+  for (let item of [1, 2, 3]) {
+    console.log(item); // 配列の値が2倍になって出力される
+  }
+  // 出力:
+  // 2
+  // 4
+  // 6
+</script>
