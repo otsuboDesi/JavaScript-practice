@@ -1,0 +1,22 @@
+<script>
+  // スプレッド演算子を使ってオブジェクトを作成
+
+  const obj1 = { prop1: 10, prop2: 20 };
+  const obj2 = { prop3: 30, prop4: 40 };
+
+  // オブジェクトのマージ
+  console.log({ ...obj1, ...obj2 });
+
+  // 任意のプロパティの追加
+  console.log({ prop0: 0, ...obj2, prop5: 50 });
+
+  // プロパティ重複時は、あとから定義したほうで上書き
+  console.log({ prop1: 0, ...obj1 });
+  // output: {prop1: 10, prop2: 20}
+
+  //   関数実行時にはオブジェクトとスプレッド演算子で引数を渡すことはできない
+  const obj = { prop1: 10, prop2: 20 };
+  Math.max(...obj);
+  //   output: Uncaught TypeError: Spread syntax requires ...iterable[Symbol.iterator] to be a function
+  // 型エラー：呼び出し可能なイテレータが見つかりません
+</script>
