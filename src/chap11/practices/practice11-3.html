@@ -1,0 +1,21 @@
+<script>
+  // 1.Setの初期化
+  const chuka = new Set(["八宝菜", "餃子", "回鍋肉", "青椒肉絲", "餃子"]);
+  console.log(chuka);
+
+  // 2.杏仁豆腐と餃子を追加
+  chuka.add("杏仁豆腐");
+  chuka.add("餃子");
+  console.log(chuka);
+
+  // 3."回鍋肉を削除
+  chuka.delete("回鍋肉");
+  console.log(chuka);
+
+  // 4.Setに"八宝菜"が入っているか確認
+  console.log(chuka.has("八宝菜"));
+
+  // 5.4の状態のSetオブジェクトを配列に直して、要素を結合して一つもの時列にする
+  const newChuka = Array.from(chuka);
+  console.log(newChuka.join(" "));
+</script>
