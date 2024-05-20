@@ -1,0 +1,57 @@
+<script>
+  // アルファベットの範囲を指定してイテレータを作成する関数
+  function alphabetIterator(start = "a", end = "z") {
+    // startがendより後のアルファベットだった場合はエラーをスロー
+    if (start > end) {
+      throw "開始文字は終了文字より前のアルファベットを選んでください。";
+    }
+
+    // アルファベットが1文字ずつ格納された配列を定義
+    // * splitはStringオブジェクトのメソッドで、引数で指定された文字で文字列を分割し、配列として返す。
+    // * なお、空文字（""）が渡された場合には文字列を一文字ずつ分割。
+    const ALPHABET_ARRAY = "abcdefghijklmnopqrstuvwxyz".split("");
+    // ALPHABET_ARRAY = [ 'a', 'b', 'c', ..., 'z' ];
+
+    // startとendの文字を配列内で検索し、一致する要素の添字を取得
+    const startIndex = ALPHABET_ARRAY.indexOf(start);
+    const endIndex = ALPHABET_ARRAY.indexOf(end);
+
+    // 配列を指定の範囲で切り取り（endの文字も含めたいので+1）
+    const targetAlphabet = ALPHABET_ARRAY.slice(startIndex, endIndex + 1);
+
+    // イテレータオブジェクトを返す
+    return {
+      // nextメソッドを定義
+      next() {
+        // 配列のshiftメソッドで配列の先頭から一つずつ要素を取り出す
+        // 取り出す要素がなくなったとき、shift()の戻り値はundefinedとなる。
+        const alphabet = targetAlphabet.shift();
+
+        // 取り出された要素をvalueとして返却し、doneがtrueかfalseかを返却
+        return {
+          // 取り出された要素をvalueとして返却
+          value: alphabet,
+          // alphabetがundefinedの時、trueを返却
+          done: alphabet ? false : true,
+        };
+      },
+    };
+  }
+
+  // "c"から"e"までのアルファベットを生成するイテレータを作成
+  const it = alphabetIterator("c", "e");
+  // イテレータから次の値を取得
+  let nextValue = it.next();
+  // doneがtrueになるまでループを続ける
+  while (!nextValue.done) {
+    // 現在の値をコンソールに出力
+    console.log(nextValue);
+
+    // 次の値をnextValueに格納
+    nextValue = it.next();
+  }
+  // 出力:
+  // { done: false, value: "c" }
+  // { done: false, value: "d" }
+  // { done: false, value: "e" }
+</script>
