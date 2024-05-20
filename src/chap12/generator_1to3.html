@@ -1,0 +1,23 @@
+<script>
+  // ジェネレータ関数の定義（1から3までの値を生成する）
+  function* gen1to3() {
+    let index = 1; // インデックスを初期化
+    // yield は value プロパティとして指定された値を返します。例えば、yield 1 は { value: 1, done: false } を返します。
+    yield index; // 1回目のnext()によってこの地点まで実行が完了し、indexの値を返す
+    index++; // インデックスをインクリメント
+    yield index; // 2回目のnext()によってこの地点まで実行が完了し、indexの値を返す
+    index++; // インデックスをインクリメント
+    return index; // 3回目のnext()によってこの地点まで実行が完了し、indexの値を返す
+  }
+
+  // ジェネレータ関数の実行はGeneratorオブジェクトの生成を意味する
+  const generator = gen1to3();
+
+  // next()の実行によってジェネレータ関数内のコードが実行される
+  console.log(generator.next());
+  // output: { value: 1, done: false } 1つ目のyieldによって返されるオブジェクト
+  console.log(generator.next());
+  // output: { value: 2, done: false } 2つ目のyieldによって返されるオブジェクト
+  console.log(generator.next());
+  // output: { value: 3, done: true } returnによって返されるオブジェクト
+</script>

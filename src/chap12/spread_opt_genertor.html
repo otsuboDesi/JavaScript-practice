@@ -1,0 +1,19 @@
+<script>
+  // Symbol.iteratorの変更後にスプレッド演算子で配列を複製
+
+  //   ArrayのプロトタイプのSymbol.iteratorを上書き
+  // Symbol.iteratorは、配列などの反復可能なオブジェクトがどのように反復されるかを定義するメソッド。
+  // ジェネレーター関数を使用して、配列が反復される際に"Hello"と"World"という値を順番に返すようにしている
+  Array.prototype[Symbol.iterator] = function* () {
+    yield "Hello";
+    yield "World";
+  };
+
+  //   元の配列の作成
+  const arry = [1, 2, 3];
+
+  //   スプレッド構文による配列の複製
+  const newArry = [...arry];
+  console.log(newArry);
+  // output: [ "Hello", "World" ]
+</script>
