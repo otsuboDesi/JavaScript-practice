@@ -1,0 +1,19 @@
+<script>
+  // size: 配列のlengthのようにmapの場合はsizeプロパティに長さが格納されている
+  const fruits = new Map();
+
+  // 値を追加
+  fruits.set(1, "apple");
+  const emptyObj = {};
+  // さらにオブジェクトを追加
+  fruits.set(emptyObj, "orange");
+
+  // Mapの要素数を取得
+  console.log(fruits.size);
+
+  //HACK: Map, オブジェクトの使い分け
+  //   mapオブジェクトは、キーに文字列以外も使用ができる
+  // Mapはfor...of, 文を使ったり繰り返し処理を記述可能
+  // Mapオブジェクトはsizeを通して長さを取得可能
+  // Mapオブジェクトの場合メソッドを保持できない
+</script>
