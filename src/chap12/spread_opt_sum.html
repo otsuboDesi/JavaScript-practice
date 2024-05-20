@@ -1,0 +1,24 @@
+<script>
+  // 可変長引数を受け取る関数sumの定義
+  function sum(...vals) {
+    // 合計値を保持する変数returnValueを初期化
+    let returnValue = 0;
+
+    // for...ofループを使ってvals配列の各値を反復処理
+    for (const val of vals) {
+      // 各値をreturnValueに加算
+      returnValue += val;
+    }
+
+    // 合計値を返す
+    return returnValue;
+  }
+
+  // 関数sumを呼び出し、引数の合計値をコンソールに出力
+  console.log(sum(1, 2));
+  // output: 3
+  console.log(sum(1, 2, 3));
+  // output: 6
+  console.log(sum(1, 2, 3, 4));
+  // output: 10
+</script>
