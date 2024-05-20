@@ -1,0 +1,32 @@
+<script>
+  // イテラブルオブジェクトを定義
+  const iterableObject = {
+    // Symbol.iteratorメソッドを実装
+    // HACK:Symbolはプロパティの衝突を避けるためにES6で追加された、一意の値をとるデータ型
+    // HACK:Symbol.iteratorにはJavaScriptエンジンがあらかじめ生成したSymbolがたの値が格納されている。
+    // この値をキーにしてオブジェクトにイテレータを返す関数を設定すると、既存のイテレーターの処理を上書きすることができる
+
+    [Symbol.iterator]() {
+      let value = 0; // イテレーションの開始値を設定
+      return {
+        // nextメソッドを定義
+        next() {
+          // valueが2を超えるとイテレーションを終了
+          if (value > 2) {
+            return { done: true }; // イテレーションの終了を示す
+          } else {
+            return {
+              done: false, // イテレーションがまだ続くことを示す
+              value: value++, // 現在の値を返し、次に進む
+            };
+          }
+        },
+      };
+    },
+  };
+
+  // for...ofループを使用してイテレータの値を反復処理
+  for (const value of iterableObject) {
+    console.log(value); // 現在の値をコンソールに出力
+  }
+</script>
