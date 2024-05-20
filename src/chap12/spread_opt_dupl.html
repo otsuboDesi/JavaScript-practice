@@ -1,0 +1,12 @@
+<script>
+  // 配列の複製
+  const original = ["元の値"];
+
+  // 元の配列の要素を持つ新しい配列を作成
+  const duplicated = [...original];
+  duplicated[0] = "変更後の値"; // 複製後の値を変更
+
+  console.log(`original[ ${original[0]} ] duplicated[ ${duplicated[0]} ]`);
+  // 出力： original[ 元の値 ] duplicated[ 変更後の値 ]
+  //   複製されたものは値が変わっている
+</script>
