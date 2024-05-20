@@ -1,0 +1,16 @@
+<script>
+  const chuka = ["回鍋肉", "青椒肉絲", "餃子"];
+  const desert = ["杏仁豆腐", "ゴマ団子"];
+
+  // 1.chuka + chuka
+  const duplChuka = [...chuka, ...chuka];
+  console.log(duplChuka);
+
+  // 2.chuka + desert
+  const newMenu = [...chuka, ...desert];
+  console.log(newMenu);
+
+  // 3.chuka + "担々麺" + desert
+  const mergedMenu = [...chuka, "担々麺", ...desert];
+  console.log(mergedMenu);
+</script>
