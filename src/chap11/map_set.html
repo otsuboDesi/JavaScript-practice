@@ -1,0 +1,17 @@
+<script>
+  // set: Mapオブジェクトに対して値を追加できる。
+  const fruits = new Map();
+
+  // 数値をキーとして値を登録
+  fruits.set(1, "apple");
+  const emptyObj = {};
+
+  // オブジェクトをキーとして値を登録
+  fruits.set(emptyObj, "orange");
+
+  // 真偽値をキーとして値を登録
+  fruits.set(true, "grape");
+
+  console.log(fruits);
+  // output: Map { 1 => "apple", emptyObj => "orange", true => "grape" }
+</script>
