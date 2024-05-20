@@ -1,0 +1,14 @@
+<script>
+  // forEach: 配列のメソッドと同様に、Mapオブジェクトに対してコールバック関数を使ってループを行う
+  const map = new Map([
+    ["キー1", "値1"],
+    ["キー2", "値2"],
+  ]);
+
+  // value:Mapの値が１つずつ渡される
+  // key: Mapのkeyが１つずつ渡される
+  // map: Mapオブジェクト自体が渡される
+  map.forEach((value, key, map) => {
+    console.log(`value：[${value}], key：[${key}], map：`, map);
+  });
+</script>
