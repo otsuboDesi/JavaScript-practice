@@ -1,0 +1,30 @@
+<script>
+  const html = `<h1>見出し１</h1>    
+    <h2>見出し２</h2>    
+    <h3>見出し３</h3>    
+    <header>ヘッダー</header>`;
+
+  // ジェネレータ関数の定義
+  function* extractHeadings(html) {
+    // 見出しタグにマッチする正規表現を定義
+    const headingRegex = /<h([1-6])>(.+?)<\/h\1>/g;
+    const matches = html.matchAll(headingRegex);
+
+    // matchesはイテレータなので、for...ofで処理できる
+    for (const match of matches) {
+      yield match[2]; // マッチしたテキストをyieldする
+    }
+  }
+
+  // ジェネレータ関数を呼び出してイテレータオブジェクトを生成
+  const headingsIterator = extractHeadings(html);
+
+  // for...ofループを使って見出しテキストを順に出力
+  for (const heading of headingsIterator) {
+    console.log(heading);
+  }
+  // 出力:
+  // 見出し１
+  // 見出し２
+  // 見出し３
+</script>
