@@ -1,0 +1,31 @@
+<script>
+  // ジェネレータ関数の定義
+  // maxの値までの数値を順番に生成するイテレータを作成する
+  function* genIterator(max) {
+    let value = 0; // 初期値を0に設定
+    while (value < max) {
+      // valueがmax未満である限りループを続ける
+      yield value++; // 現在の値をyieldし、その後インクリメント
+    }
+  }
+
+  // ジェネレータ関数の実行はGeneratorオブジェクトの生成を意味する
+  const iterator = genIterator(3);
+
+  // next()の実行によってジェネレータ関数内のコードが実行される
+  console.log(iterator.next());
+  //output: { done: false, value: 0 }
+  // 1回目のnext()によってyield value++が実行され、valueが0のときに一時停止
+
+  console.log(iterator.next());
+  // output: { done: false, value: 1 }
+  // 2回目のnext()によって前回の続きから実行され、valueが1のときに一時停止
+
+  console.log(iterator.next());
+  // output: { done: false, value: 2 }
+  // 3回目のnext()によって前回の続きから実行され、valueが2のときに一時停止
+
+  console.log(iterator.next());
+  // output: { done: true, value: undefined }
+  // 4回目のnext()によって前回の続きから実行され、valueが3となりループを抜けてジェネレータが終了
+</script>
