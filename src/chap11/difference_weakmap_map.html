@@ -1,0 +1,23 @@
+<script>
+  // NOTE:WeakMapとMapの挙動の違い
+  // WeakMapはキーとして使ったオブジェクトが使用不可(参照不可)になると、キーと値のペアもWeakMapのコレクションから削除対象になる
+  // Mapキーとして使ったオブジェクトは参照不可になったとしても、キーと値のペアはMapコレクション内に保持し続けることができる
+
+  let wm, map;
+  function fn() {
+    // 関数fnのスコープで変数keyを宣言しているため、変数keyは関数fn内でのみ参照可能
+    const key = {};
+    wm = new WeakMap();
+    wm.set(key, "値");
+    map = new Map();
+    map.set(key, "値");
+    // 関数が終了した時点で変数keyは使用不可能(参照不可能)になる
+  }
+  fn();
+
+  // このスコープでは、変数keyは使用できないため、wmないのキーと値のペアもガベージコレクションの対象となる
+  for (const pair of map) {
+    // map内には不要な値としてキーと値のペアが保持し続けられる
+    console.log(pair[0], pair[1]);
+  }
+</script>
