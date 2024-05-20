@@ -1,0 +1,20 @@
+<script>
+  // __proto__とprototypeは同じオブジェクトを保持する
+
+  function Test() {}
+  Test.prototype.hello = function () {
+    console.log("こんにちは");
+  };
+  // new演算子によってコンストラクタからインスタンスを作成する時、コンストラクタ関数のprototypeプロパティに格納されているオブジェクトへの参照が、
+  // インスタンスの__proto__という特別なプロパティにコピーされる
+  const instance = new Test();
+
+  // __proto__とprototypeは同じオブジェクト
+  console.log(instance.__proto__ === Test.prototype);
+
+  // __proto__を通してメソッドを実行
+  instance.__proto__.hello();
+
+  //   HACK:prototypeはコンストラクタ関数のプロパティですが、
+  // HACK:__proto__はコンストラクタ関数のprototypeオブジェクトへの参照が保持されるインスタンスのプロパティ
+</script>
