@@ -1,0 +1,12 @@
+<script>
+  // delet: Mapオブジェクト内から値を削除
+  const fruits = new Map([
+    [1, "apple"],
+    [false, "orange"],
+  ]);
+
+  // falseをキーに値を削除
+  fruits.delete(false);
+  console.log(fruits);
+  // output: Map { 1 => "apple" }
+</script>
