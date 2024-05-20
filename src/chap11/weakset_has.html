@@ -1,0 +1,14 @@
+<script>
+  // has: WeakMapオブジェクトに対して一致する値が存在するか確認。Booleanで返す
+  const wset = new WeakSet();
+  let obj = {};
+  wset.add(obj);
+
+  //   keyObjはWeakMapのキーとして含まれる
+  console.log(wset.has(obj));
+
+  //   {}はkeyObjとは別のオブジェクトの為、WeakMapのキーとして含まれない
+  console.log(wset.has({}));
+
+  //   HACK: WeakMapは反復可能オブジェクトではないためfor...of等を使った反復処理はできません
+</script>

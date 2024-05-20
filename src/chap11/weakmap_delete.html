@@ -1,0 +1,10 @@
+<script>
+  // delete: WeakMapオブジェクトに対して特定のキーに一致する値を削除
+  const wm = new WeakMap();
+  let keyObj = {};
+  wm.set(keyObj, "value");
+
+  // キーと値のペアを削除
+  wm.delete(keyObj);
+  console.log(wm);
+</script>
