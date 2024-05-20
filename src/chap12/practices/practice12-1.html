@@ -1,0 +1,37 @@
+<script>
+  function rangeIterator(min, max) {
+    // 現在の値を min で初期化
+    let current = min;
+
+    return {
+      // next メソッドを定義
+      next() {
+        // 現在の値が max に達したらイテレーションを終了
+        if (current < max) {
+          return {
+            value: current++, // 現在の値を返し、その後インクリメント
+            done: false, // まだ範囲内なので done は false
+          };
+        } else {
+          return {
+            // value: undefined, // max に達したら値は undefined
+            done: true, // イテレーション終了
+          };
+        }
+      },
+    };
+  }
+
+  // 例: 0 から 5 までの範囲のイテレータを作成 (5 は含まない)
+  const iterator = rangeIterator(0, 3);
+  console.log(iterator.next().value); // 値を出力
+  console.log(iterator.next().value); // 値を出力
+  console.log(iterator.next().value); // 値を出力
+  console.log(iterator.next().value); // 値を出力
+  // 出力:
+  // 0
+  // 1
+  // 2
+  // undefined
+  // undefined
+</script>
