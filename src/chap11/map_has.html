@@ -1,0 +1,12 @@
+<script>
+  // has: Mapオブジェクトに対して値が存在するか確認。booleanを返す
+  const fruits = new Map([
+    [1, "apple"],
+    [false, "orange"],
+  ]);
+  // Mapに含まれるキー（false）の場合
+  console.log(fruits.has(false));
+
+  // Mapに含まれないキー（2）の場合
+  console.log(fruits.has(2));
+</script>
