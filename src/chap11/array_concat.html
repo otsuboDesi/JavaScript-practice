@@ -1,0 +1,9 @@
+<script>
+  // HACK：ES6以降配列の結合や複製を行うときはスプレッド演算子を使うのが主流
+  const fruits = ["banana", "orange", "grape"];
+  //   配列を結合(末尾に追加される)
+  const newFruits = fruits.concat(["melon", "mango"]);
+  console.log(newFruits);
+  //元の配列は変更されない
+  console.log(fruits);
+</script>

@@ -1,0 +1,9 @@
+<script>
+  // get: WeakMapオブジェクトに対して特定のキーに対応する値を取得
+  const wm = new WeakMap();
+  let keyObj = {};
+  wm.set(keyObj, "value");
+
+  // keyObjに対する値の取得
+  console.log(wm.get(keyObj));
+</script>

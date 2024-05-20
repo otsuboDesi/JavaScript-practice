@@ -1,0 +1,19 @@
+<script>
+  // 配列の中に、配列とオブジェクトが格納されている
+  const array2D = [
+    ["太郎", "25歳", "男"],
+    { name: "花子", age: "23歳", gender: "女" },
+  ];
+
+  //   0番目に登録されている配列を取得
+  console.log(array2D[0]);
+  //   [１階層目][２階層目]
+  console.log(array2D[0][0]);
+  console.log(array2D[0][2]);
+
+  //   ドット記法でプロパティを取得
+  console.log(array2D[1].name);
+
+  //   プラケット記法でプロパティを取得
+  console.log(array2D[1]["age"]);
+</script>

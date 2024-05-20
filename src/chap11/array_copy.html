@@ -1,0 +1,33 @@
+<script>
+  // シャローコピー(浅いコピー):オブジェクトの参照をコピー。オブジェクトの要素はコピーされません。
+  const original = ["元の値"];
+  const copied = original;
+  copied[0] = "変更後の値";
+
+  console.log(original[0]);
+
+  //   ディープコピー(深いコピー):配列オブジェクトの保持する値も複製して、別の配列オブジェクトを新に作成する
+  const original2 = ["元の値"];
+  //   同じ要素を保持する配列を新しく作成
+  const copied2 = original2.concat();
+  copied2[0] = "変更後の値";
+  console.log(original2[0]);
+
+  //   NOTE:配列が高い層の場合は１階層目のみディープコピーが行われる
+  const original3 = ["1階層目の値", ["2階層目の値"]];
+
+  //   同じ要素を保持する配列を新しく作成
+  const copied3 = original3.concat();
+  //   １階層目の値を変更
+  copied3[0];
+
+  //   ２階層目の値を変更
+  copied3[1][0];
+  // １階層目はoriginal3には影響なし
+  console.log(original3[0]);
+
+  //   ２階層目はoriginal3の値も変わる
+  console.log(original3[1][0]);
+
+  //   HACK: concat, sliceは配列の完全なディープコピーではない。現時点ではない
+</script>

@@ -1,0 +1,12 @@
+<script>
+  const arry = [1, 2, 3, 4, 5];
+  // あらかじめ定義した名前付き関数をコールバック関数として設定する
+  // NOTE:コールバック関数とは、他の関数に引数として渡される関数のこと
+  // 引数はvalue
+  function multiply5(value) {
+    console.log(value * 5);
+  }
+
+  // 名前付き関数をコールバック関数として渡す
+  arry.forEach(multiply5);
+</script>

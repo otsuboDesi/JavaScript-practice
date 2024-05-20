@@ -1,0 +1,11 @@
+<script>
+  // reduce: 配列をループして各要素の値から単一の出力値を生成。
+  function reducer(totalValue, currentValue) {
+    // totalValueは前のループの戻り値が来る(１回目はこの場合１)
+    return totalValue + currentValue;
+  }
+  const arry = [1, 2, 3, 4, 5];
+  const result = arry.reduce(reducer);
+  console.log(result);
+  // > 15
+</script>

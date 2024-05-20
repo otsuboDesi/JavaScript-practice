@@ -1,0 +1,11 @@
+<script>
+  // filter: コールバック関数の条件がtrueになったときの配列の要素のみを保持する新しい配列を返す
+  const arry = [1, 2, 3, 4, 5];
+  function gt3(value) {
+    // trueの条件
+    return value > 3;
+  }
+  // 新しい配列を返す
+  const newArry = arry.filter(gt3);
+  console.log(newArry);
+</script>

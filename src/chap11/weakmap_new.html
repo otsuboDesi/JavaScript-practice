@@ -1,0 +1,16 @@
+<script>
+  // WeakMap: keyにオブジェクトのみ使用可能なコレクション。
+
+  const wm = new WeakMap();
+  let keyObj = {};
+  // keyObjをキーにして"value"を追加
+  wm.set(keyObj, "value");
+
+  // keyObjと"value"が対で格納される
+  console.log(wm);
+  // output: WeakMap { {...} => "value" }
+
+  // オブジェクト以外をキーにするとエラーが発生！！
+  wm.set(1, "value2");
+  // output: Uncaught TypeError: Invalid value used as weak map key（不正な値がWeakMapのキーとして使用されました。）
+</script>

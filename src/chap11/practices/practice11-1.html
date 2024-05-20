@@ -1,0 +1,44 @@
+<script>
+  const chuka = ["八宝菜", "餃子", "回鍋肉", "青椒肉絲"];
+  console.log(chuka);
+
+  // 1.末尾に天津飯を追加
+  chuka.push("天津飯");
+  console.log("1: ", chuka);
+
+  // 2.先頭にチャーハンを追加
+  chuka.unshift("チャーハン");
+  console.log("2: ", chuka);
+
+  // 3.先頭を削除
+  chuka.shift();
+  console.log("3: ", chuka);
+
+  // 4.末尾を削除
+  chuka.pop();
+  console.log("4: ", chuka);
+
+  // 5.index2を削除
+  const deletedIndex = chuka.splice(2, 1);
+  console.log("5: ", chuka);
+
+  // 6.餃子のindexを確認
+  const foundIndex = chuka.indexOf("餃子");
+  console.log("6: ", foundIndex);
+
+  // 7.配列の末尾に新しい配列を結合
+  const newChuka1 = chuka.concat(["杏仁豆腐", "ごま豆腐"]);
+  console.log("7: ", newChuka1);
+
+  // 8.1~3の要素を抽出して新しい配列を作成
+  const newChuka2 = newChuka1.slice(1, 4);
+  console.log("8: ", newChuka2);
+
+  // 9.8の配列の並びを逆にする
+  newChuka2.reverse();
+  console.log("9: ", newChuka2);
+
+  // 10.配列に八宝菜が入っているか真偽値で確認
+  const foundChuka = newChuka2.includes("八宝菜");
+  console.log("10: ", foundChuka);
+</script>

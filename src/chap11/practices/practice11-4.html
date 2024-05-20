@@ -1,0 +1,21 @@
+<script>
+  const menu = new Map([
+    ["天津飯", 1000],
+    ["八宝菜", 500],
+    ["ゴマ団子", 200],
+  ]);
+  // [ 商品名, 価格 ]
+
+  // 1.杏仁豆腐を追加
+  console.log(menu.set("杏仁豆腐", 300));
+
+  // 2.回鍋肉の金額を出力
+  console.log(menu.get("天津飯"));
+
+  //  3."ゴマ団子"が入っているか確認
+  console.log(menu.has("ゴマ団子"));
+
+  // 4."八宝菜"をメニューから削除
+  menu.delete("八宝菜");
+  console.log(menu);
+</script>

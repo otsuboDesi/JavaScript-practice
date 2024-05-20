@@ -1,0 +1,17 @@
+<script>
+  // forEach: 配列の各要素を使って繰り返し処理を行う
+  const arry = [1, 2, 3, 4, 5];
+  arry.forEach(function (value, index, arry) {
+    console.log(value, index, arry);
+  });
+
+  // 上記の処理をfor文で記述した場合
+  // for文のループ条件や、変数valueに配列の値を代入等も開発者自身が記述必要があるので、forEachを使ったコードよりも各コードが長くなる
+  for (let index = 0; index < arry.length; index++) {
+    let value = arry[index];
+    console.log(value, index, arry);
+  }
+
+  // 上記の文をアロー関数を使った場合(もっと簡略化できる)
+  arry.forEach((value, index, arry) => console.log(value, index, arry));
+</script>

@@ -1,0 +1,21 @@
+<script>
+  // size: 配列のlengthのようにSetの場合はsizeプロパティに長さが格納されている
+
+  const fruits = new Set(["apple", "orange"]);
+  console.log(fruits.size); // fruitsオブジェクトの要素数
+
+  //HACK: Setオブジェクトの利用ケース
+  // Setオブジェクトが一意の値を格納する特徴を持っているので、配列に対し重複した値を取り除く
+  const fruits2 = ["apple", "orange", "banana", "orange", "apple"];
+
+  //   Setオブジェクトに変換することで、重複とが取り除かれる
+  const fruitsSet = new Set(fruits2);
+
+  // 再度配列に変換
+  //   Array.from -> 新しい Array インスタンスを生成
+  // Array.from() はイテラブルオブジェクトや配列風オブジェクトを配列に変換。
+  // Setはイテラブルオブジェクト。
+  // NOTE: イテラブルオブジェクトは、要素を一度に一つずつ返すことができるオブジェクトのことを指します。
+  // これらのオブジェクトは、Symbol.iterator メソッドを実装しており、for...of ループやスプレッド構文、Array.from() などで使用できる。
+  fruits2 = Array.from(fruitsSet);
+</script>

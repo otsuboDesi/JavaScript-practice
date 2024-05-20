@@ -1,0 +1,21 @@
+<script>
+  // Map: キーと値を対で保持するコレクション。
+  // Mapの初期化
+  // 空のMapオブジェクトを作成
+  const emptyMap = new Map();
+
+  // 空のオブジェクトが定義される
+  console.log(emptyMap);
+
+  // 2次元配列からMapオブジェクトを作成
+  const convertedMap = new Map([
+    ["キー1", "値1"],
+    ["キー2", "値2"],
+  ]);
+  console.log(convertedMap);
+  //   => 記号で示されているのは、キーと値のペアが Map に格納されていることを示す
+  // output: Map { "キー1" => "値1", "キー2" => "値2" }
+
+  //   HACK: Mapの場合はオブジェクトのようにドット記法で値を取り出すことができない。
+  // Mapオブジェクト内の値の取得、変更削除等は専用のメソッドを使用する
+</script>

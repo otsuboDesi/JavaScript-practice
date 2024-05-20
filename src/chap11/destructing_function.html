@@ -1,0 +1,21 @@
+<script>
+  // 関数の引数に対する分割代入：関数の引数を分割だいにゅとして使うと渡されたオブジェクトや配列から、特定の要素を抽出し引数に渡すことができる。
+
+  const fruitsArry = ["banana", "orange", "grape"];
+  const fruitsObj = { banana: "バナナ", orange: "オレンジ" };
+  // 1つ目、2つ目の要素を空白にする
+  function bunkatuArry([, , fruit3]) {
+    console.log(fruit3);
+  }
+  // 配列を実引数として渡す
+  bunkatuArry(fruitsArry);
+  // > grape
+
+  // orangeのみ引数として抽出
+  function bunkatuObj({ orange }) {
+    console.log(orange);
+  }
+  // オブジェクトを実引数として渡す
+  bunkatuObj(fruitsObj);
+  // > オレンジ
+</script>
