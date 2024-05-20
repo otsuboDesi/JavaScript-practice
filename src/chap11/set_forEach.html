@@ -1,0 +1,12 @@
+<script>
+  // forEach: 配列のメソッドと同様に、Setオブジェクトに対してコールバック関数を使ってループを行う
+
+  const set = new Set(["値1", "値2"]);
+  //   value:Setの値が１つずつ渡される
+  // sameValvue: valueと同じ値が渡される
+  // set: Setオブジェクト自体が渡される
+
+  set.forEach((value, sameValue, set) => {
+    console.log(`value：[${value}], sameValue：[${sameValue}], set：`, set);
+  });
+</script>
