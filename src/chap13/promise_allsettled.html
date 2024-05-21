@@ -1,0 +1,39 @@
+<script>
+  // Promise.allSettled: 全てのPromiseインスタンスの状態がsettled(fulfilled or rejected)になったときにthenメソッドに処理を移行する
+  // HACK: allSettledの時はcatchメソッドを使わない
+
+  // resolve()を200ミリ秒後に実行するPromiseインスタンス
+  const myResolve = new Promise((resolve) => {
+    setTimeout(() => {
+      // Promiseを解決する
+      resolve("resolveが呼ばれました。");
+      // 実行完了のログを出力
+      console.log("myResolveの実行が終了しました。");
+    }, 200);
+  });
+
+  // reject()を100ミリ秒後に実行するPromiseインスタンス
+  const myReject = new Promise((_, reject) => {
+    setTimeout(() => {
+      // Promiseを拒否する
+      reject("rejectが呼ばれました。");
+      // 実行完了のログを出力
+      console.log("myRejectの実行が終了しました。");
+    }, 100);
+  });
+
+  // 全てのPromiseがsettledになったときにthenメソッドを実行する
+  Promise.allSettled([myReject, myResolve]).then((arry) => {
+    // 各Promiseの結果をループで処理
+    for (const { status, value, reason } of arry) {
+      // 各Promiseのステータス、値、エラーをログに出力
+      console.log(`ステータス:[${status}], 値:[${value}], エラー:[${reason}]`);
+    }
+  });
+
+  // 出力：
+  //  myRejectの実行が終了しました。
+  //  myResolveの実行が終了しました。
+  //  ステータス:[rejected], 値:[undefined], エラー:[rejectが呼ばれました。]
+  //  ステータス:[fulfilled], 値:[resolveが呼ばれました。], エラー:[undefined]
+</script>
