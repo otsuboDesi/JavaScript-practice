@@ -1,0 +1,18 @@
+<script>
+  // await: Promiseインスタンスの前に記述することで、Promiseのステータスがsettledになるまで、後続のコードの実行を待機する
+  //   awaitは非同期関数内でしか使用できない
+
+  const prom = new Promise((resolve) => {
+    setTimeout(() => resolve("この値を取り出します。"), 1000);
+  });
+
+  // asyncFunctionという非同期関数を定義
+  async function asyncFunction() {
+    // 関数の中でawaitキーワードを使って、Promiseが解決されるのを待機
+    const value = await prom;
+    console.log(value);
+  }
+
+  // asyncFunctionが呼び出され、非同期関数が実行
+  asyncFunction();
+</script>
