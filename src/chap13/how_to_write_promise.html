@@ -1,0 +1,38 @@
+<script>
+  // Promiseインスタンス化：
+  // Promiseで非同期処理のハンドリングが行う為には、new Promiseと記述しインスタンス化をし、引数に非同期処理を記述
+  const instance = new Promise(asyncHandler);
+  function asyncHandler(resolve, reject) {
+    setTimeout(() => {
+      if ("非同期処理は成功？") {
+        resolve(data);
+      } else {
+        reject(error);
+      }
+    });
+  }
+
+  // thenメソッド:
+  // thenメソッドに渡すコールバック関数には、非同期処理が成功した後に実行したい処理を記述
+  let thenProm = instance.then(successHandler);
+  function successHandler(data) {
+    // 非同期処理が成功した後に実行したい処理
+  }
+
+  // NOTE: thenメソッドの第二引数には失敗したときの処理を入れることができる(catchメソッドと同じ意味)
+  // let instance = new Promise(...).then("成功した時", "失敗した時")
+
+  // catchメソッド:
+  // catchメソッドに渡すコールバック関数には、非同期処理が失敗した後に実行したい処理を記述
+  let catchProm = thenProm.catch(errorHandler);
+  function errorHandler(error) {
+    // 非同期処理が失敗した後に実行したい処理
+  }
+
+  // finallyメソッド:
+  // finallyメソッドに渡すコールバック関数には、非同期処理の終了後に必ず実行したい処理を記述
+  let finallyProm = cacheProm.finallyProm(finalHandler);
+  function finalHandler() {
+    // 非同期処理の終了後に必ず実行したい処理
+  }
+</script>
