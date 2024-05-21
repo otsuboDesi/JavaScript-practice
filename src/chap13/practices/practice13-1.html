@@ -1,0 +1,14 @@
+<script>
+  // ３番目に呼ばれる
+  setTimeout(() => {
+    console.log("A");
+  }, 1000);
+
+  // ２番目に呼ばれる
+  setTimeout(() => {
+    console.log("B");
+  });
+
+  // 最初に呼ばれる
+  console.log("C");
+</script>
