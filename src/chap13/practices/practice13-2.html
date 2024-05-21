@@ -1,0 +1,26 @@
+<script>
+  function delay(fn, message, ms) {
+    setTimeout(function () {
+      fn(message);
+    }, ms);
+  }
+
+  // 1.
+  // delay(console.log, "こんにちは", 1000);
+
+  // // 2.
+  // delay(alert, "さようなら", 2000);
+
+  // 3.
+
+  // 最初の delay で 1 秒後に "1秒経ちました" を表示
+  delay(
+    function (message) {
+      console.log(message);
+      // 次の delay をここで呼び出す
+      delay(console.log, "さらに1秒経ちました", 1000);
+    },
+    "1秒経ちました",
+    1000
+  );
+</script>
