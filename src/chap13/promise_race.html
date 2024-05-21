@@ -1,0 +1,37 @@
+<script>
+  // Promise.race: 複数のPromiseインスタンスのいずれかの状態がsettled(fulfilled or rejected)になったとき
+  // Promise.raceに続くthenメソッドかcatchメソッドを実行する
+
+  // resolve()を100ミリ秒後に実行するPromiseインスタンス
+  const myResolve = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolveが呼ばれました。");
+      console.log("myResolveの実行が終了しました。");
+    }, 100);
+  });
+
+  // reject()を200ミリ秒後に実行するPromiseインスタンス
+  //   resolveを使わないので"_"にする
+  const myReject = new Promise((_, reject) => {
+    setTimeout(() => {
+      reject("rejectが呼ばれました。");
+      console.log("myRejectの実行が終了しました。");
+    }, 200);
+  });
+
+  // Promise.raceを使用して、いずれかのPromiseがsettledになるのを待つ
+  Promise.race([myReject, myResolve])
+    .then((value) => {
+      // 最初にsettledになったPromiseがfulfilledの場合に実行される
+      console.log(value);
+    })
+    .catch((value) => {
+      // 最初にsettledになったPromiseがrejectedの場合に実行される
+      console.log(value);
+    });
+
+  // 出力:
+  //  myResolveの実行が終了しました。
+  //  resolveが呼ばれました。
+  //  myRejectの実行が終了しました。
+</script>
