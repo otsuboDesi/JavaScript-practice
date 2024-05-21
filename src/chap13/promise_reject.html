@@ -1,0 +1,13 @@
+<script>
+  // Promise.reject: rejeceted状態のPromiseインスタンスを返す。
+  // 基本的にPromise.resolveと同じだが、エラーのみ非同期とする実装はほとんどない
+
+  Promise.reject("エラーの理由").catch((error) => {
+    console.error(error);
+  });
+  // 実行中のコンテキストを含むコールスタックが空になった
+  console.log("グローバルコンテキスト終了");
+  // 出力：
+  //    グローバルコンテキスト終了
+  //  エラーの理由
+</script>
