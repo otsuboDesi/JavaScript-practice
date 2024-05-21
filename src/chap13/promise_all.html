@@ -1,0 +1,31 @@
+<script>
+  // Promise.all: 全ての非同期処理を並列に実行し、全ての完了を待ってから次の処理を行う
+
+  // 指定されたミリ秒(ms)待機するPromiseを返す関数
+  function wait(ms) {
+    return new Promise((resolve, reject) => {
+      // 指定されたms後に処理を実行
+      setTimeout(() => {
+        console.log(`${ms}msの処理が完了しました。`);
+        resolve(ms); // 処理が完了したらresolveを呼び出し、msを返す
+      }, ms); // 引数のms分だけ待機
+    });
+  }
+
+  // 400ms待機するPromiseを作成
+  const wait400 = wait(400);
+  // 500ms待機するPromiseを作成
+  const wait500 = wait(500);
+  // 600ms待機するPromiseを作成
+  const wait600 = wait(600);
+
+  // Promise.allを使用して、全てのPromiseが完了するのを待つ
+  Promise.all([wait500, wait600, wait400]).then(
+    ([resolved500, resolved600, resolved400]) => {
+      // 全てのPromiseが完了した時に実行される
+      console.log("すべてのPromiseが完了しました。");
+      // 各Promiseの結果を出力
+      console.log(resolved500, resolved600, resolved400);
+    }
+  );
+</script>
