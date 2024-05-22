@@ -1,0 +1,24 @@
+<script>
+  // 同じフォルダのsample.jsonを相対パスで指定する
+  fetch("sample.json")
+    .then((response) => response.json())
+    .then((data) => {
+      for (const { key, value } of data) {
+        console.log(key + ":" + value);
+      }
+    });
+
+  // fetchを使ってサーバーからデータやファイルを取得する
+  // fetchは非同期処理になるので、取得したデータを使って処理を行うにはPromiseやasync/awaitを使って処理する。
+  async function myFetch() {
+    const response = await fetch("sample.json");
+    // response.json(): responseで返ってきたJSON文字列を処理するときに使う。
+    // jsonメソッドもPromiseを返す
+    const data = await response.json();
+    console.log(data);
+    for (const { key, value } of data) {
+      console.log(key + ":" + value);
+    }
+  }
+  myFetch();
+</script>
