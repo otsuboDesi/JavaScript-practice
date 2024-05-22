@@ -1,0 +1,13 @@
+<script>
+  console.log("A");
+  setTimeout(() => {
+    // コールバック内ででqueueMicrotaskが呼ばれ、その中で「B」を表示するタスクがジョブキューに追加
+    queueMicrotask(() => console.log("B"));
+    // 先にCが実行される
+    console.log("C");
+  });
+  Promise.resolve().then(() => console.log("D"));
+  console.log("E");
+
+  // A -> E -> D -> C -> B
+</script>

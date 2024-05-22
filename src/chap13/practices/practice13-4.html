@@ -1,0 +1,28 @@
+<script>
+  function increment(num) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        num += 2;
+        console.log(num);
+        if (num < 6) {
+          resolve(num);
+        } else {
+          reject(num);
+        }
+      }, 1000);
+    });
+  }
+
+  increment(0)
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .then((num) => increment(num))
+    .catch((num) =>
+      console.error(`エラーに飛びました。現在のカウントは ${num} です。`)
+    )
+    .finally(() => console.log("処理終了"));
+</script>

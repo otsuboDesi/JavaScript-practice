@@ -1,0 +1,20 @@
+<html>
+  <body>
+    <button>ボタン</button>
+    <script>
+      function sleep(ms) {
+        // 非同期処理を実行、コールバック関数の予約間メインスレッドから切り離して行われる
+        setTimeout(function () {
+          alert("sleep関数が完了しました。");
+        }, ms);
+      }
+      sleep(3000); // sleep関数を実行
+
+      const btn = document.querySelector("button");
+      function clickHandler() {
+        alert("ボタンがクリックされました。");
+      }
+      btn.addEventListener("click", clickHandler);
+    </script>
+  </body>
+</html>

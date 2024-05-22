@@ -1,0 +1,42 @@
+<script>
+  // Promise.any: 複数のPromiseインスタンスのいずれかがfulfilledになったタイミングでthenメソッドを処理する
+  // 全てのインスタンスの状態がrejectedになったときに、catchメソッドを実行する
+
+  // resolve()を200ミリ秒後に実行するPromiseインスタンス
+  const myResolve = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("resolveが呼ばれました。");
+      console.log("myResolveの実行が終了しました。");
+    }, 200);
+  });
+
+  // reject()を100ミリ秒後に実行するPromiseインスタンス（rejectがresolveより前に呼び出される）
+  // resolveを使わないため'_'としておく
+  const myReject = new Promise((_, reject) => {
+    setTimeout(() => {
+      reject("rejectが呼ばれました。");
+      console.log("myRejectの実行が終了しました。");
+    }, 100);
+  });
+
+  // Promise.anyを使用して、いずれかのPromiseがfulfilledになるのを待つ
+  Promise.any([myReject, myResolve])
+    .then((value) => {
+      // 最初にfulfilledになったPromiseの値がここで処理される
+      console.log(value);
+    })
+    .catch((value) => {
+      // 全てのPromiseがrejectedになった場合に実行される
+      console.log(value);
+    })
+    .finally(() => {
+      // Promiseがsettledになった後に必ず実行される
+      console.log("finallyが呼ばれました。");
+    });
+
+  // 出力：
+  //  myRejectの実行が終了しました。
+  //  myResolveの実行が終了しました。
+  //  resolveが呼ばれました。
+  //  finallyが呼ばれました。
+</script>

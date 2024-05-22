@@ -1,0 +1,24 @@
+<script>
+  // Promiseインスタンスステータスを確認
+  let promResolve, promReject;
+
+  // 新しいPromiseを作成
+  const prom = new Promise((resolve, reject) => {
+    // resolveへの参照をpromResolveに保持
+    promResolve = resolve;
+    // rejectへの参照をpromRejectに保持
+    promReject = reject;
+  });
+
+  // Promiseの初期状態をコンソールに出力
+  console.log(prom);
+  // output: Promise {<pending>}  // Promiseはまだ解決も拒否もされていない
+
+  // Promiseを解決する
+  promResolve("引数");
+  // promReject();  // この行が実行されると、Promiseは拒否される
+
+  // Promiseの最終状態をコンソールに出力
+  console.log(prom);
+  // output: Promise {<fulfilled>: '引数'}  // Promiseは解決され、値は '引数' になる
+</script>

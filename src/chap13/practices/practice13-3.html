@@ -1,0 +1,17 @@
+<script>
+  let instance = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const date = new Date();
+      const seconds = date.getSeconds();
+
+      if (seconds % 2 === 0) {
+        resolve(seconds);
+      } else {
+        reject(seconds);
+      }
+    }, 1000);
+  })
+    .then((seconds) => console.log(`${seconds}は偶数のため、成功とします。`))
+    .catch((seconds) => console.log(`${seconds}は奇数のため、エラーとします。`))
+    .finally(() => console.log("処理を終了します"));
+</script>
