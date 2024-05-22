@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>タイトル</title>
+  </head>
+  <body>
+    <!-- コメント -->
+    <h1>見出し１</h1>
+    <p>これは段落です</p>
+  </body>
+</html>
+
+<script>
+  // NOTE:
+  // 以下のコードは、ブラウザのコンソールを使ってDOMの構造を確認するためのもの
+  // 実行方法:
+  // 1. Chromeブラウザを開く
+  // 2. ページを表示した状態で右クリックし、「検証」を選択
+  // 3. 「Console」タブを開く
+
+  // DOMツリー全体をオブジェクト形式で表示
+  console.dir(document.children);
+
+  // output:
+  // HTMLCollection(1) [html]
+  // length: 1
+
+  // html要素のchildrenを確認する場合
+  console.dir(document.children[0].children);
+
+  // output:
+  // HTMLCollection(2) [head, body]
+  // length: 2
+
+  // Nodeツリーを確認する場合
+  console.dir(document.childNodes);
+
+  // output:
+  // NodeList(2) [<!DOCTYPE html>, html]
+  // length: 2
+</script>
