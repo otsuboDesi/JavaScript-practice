@@ -1,0 +1,15 @@
+<ul>
+  <li>cloneNodeの引数がtrueでこの文字列も複製されます。</li>
+</ul>
+<script>
+  // append()等を使って複数同じ内容を挿入しても、２回目は要素の移動とみなされので、cloneNode()を使用する
+  //   cloneNode()の引数のことをフラグと呼びture | falseがある。
+  // defaultはfalse、その場合は自要素のタグのみが複製される。trueの時は再帰的に子要素、孫要素が複製される
+
+  const ul = document.querySelector("ul");
+  const li = ul.querySelector("li");
+  for (let i = 0; i < 3; i++) {
+    const clone = li.cloneNode(true); // 要素を複製
+    ul.append(clone);
+  }
+</script>
