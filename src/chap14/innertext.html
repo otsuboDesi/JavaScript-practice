@@ -1,0 +1,15 @@
+<span id="test">Hello <span style="display: none">World</span></span>
+<script>
+  // innerText: 画面上に表示されているテキストを保持する
+  // textContent: 生の(加工がされていない)テキストを保持する
+
+  const test = document.querySelector("#test");
+  console.log(`innerText: ${test.innerText}`);
+  console.log(`textContent: ${test.textContent}`);
+  // output: innerText: Hello
+  // output: textContent: Hello World
+
+  // NOTE: innerTextはIEで独自に実装されたプロパティなので正式な仕様ではないが、IEが広く普及されていたこともありこちらの記法も広く使われていた
+  // しかし「画面上に表示されているテキストのみが格納される」という仕様は紛らわしいため、
+  // テキストを取得する場合にはtextContentを使う方がよい
+</script>
