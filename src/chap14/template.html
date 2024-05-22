@@ -1,0 +1,16 @@
+<!-- templateタグを使った要素の作成 -->
+<body>
+  <!-- 新しい要素をここに追加 -->
+  <template id="tmpl">
+    <!-- テンプレートの作成 -->
+    <!-- テンプレート内の記述は画面上に表示されない -->
+    <span>テンプレートHTMLを定義</span>
+  </template>
+
+  <script>
+    const tmpl = document.querySelector("#tmpl");
+    const targetNewElement = tmpl.content; // テンプレートの中身を取得
+    // <body>に挿入
+    document.body.prepend(targetNewElement);
+  </script>
+</body>
