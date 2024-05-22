@@ -1,0 +1,45 @@
+<!-- DOMツリーの構築後にコードを実行する方法5つ -->
+
+<!-- 1.scriptタグをbodyの途次タグの直後に記述する -->
+<html>
+  <body>
+    <script>
+      console.log("test");
+    </script>
+    <!-- 1. -->
+  </body>
+</html>
+
+<!-- 2. DOMCOntentLoadedイベントかloadイベント内でJavaScriptコードを実行する-->
+<html>
+  <body>
+    <script>
+      // 通常、DOMツリー上に要素がない場合はエラーになる
+      document.addEventListener("DOMContentLoaded", () => {
+        // この関数内のコードはDOMツリー全体の構築が完了してから実行される。
+        const afterEl = document.querySelector("#after");
+        console.log(afterEl.textContent);
+        // scriptタグの後に記載したHTMLタグも取得可能。
+      });
+    </script>
+    <div id="after">scriptタグの後に記載したHTMLタグも取得可能です。</div>
+  </body>
+</html>
+
+<!-- 3. defer属性をscriptタグに付与する -->
+<!-- A→B→Cの順番でコードを実行される -->
+<script src="A.js" defer></script>
+<script src="B.js" defer></script>
+<script src="C.js" defer></script>
+<span>この要素を参照可能</span>
+
+<!-- 4. async属性をscriptタグに付与する -->
+<!-- srcは読込が完了したものから実行される -->
+<script src="A.js" async></script>
+<script src="B.js" async></script>
+<script src="C.js" async></script>
+<span>取得可能か分かりません</span>
+
+<!-- 5. srciptタグにtype="module"を付加する -->
+<script type="module"></script>
+<!-- defer促成を付与した時と同じ挙動にある -->
