@@ -1,0 +1,11 @@
+<script>
+  async function fetchDaily() {
+    const response = await fetch("daily.json");
+
+    // JSONファイルの中身の文字列をオブジェクトに変換
+    const data = await response.json();
+    console.log(data.word);
+  }
+
+  fetchDaily();
+</script>
