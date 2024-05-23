@@ -1,0 +1,21 @@
+<script>
+  // Testクラスの定義
+  class Test {
+    // helloメソッドの定義
+    hello() {
+      console.log("こんにちは");
+    }
+  }
+
+  // Testクラスのインスタンスを作成
+  const instance = new Test();
+
+  // prototypeのhelloメソッドを上書き
+  Test.prototype.hello = function () {
+    console.log("Hello");
+  };
+
+  // インスタンスからhelloメソッドを呼び出す
+  instance.hello();
+  // > Hello
+</script>
