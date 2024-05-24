@@ -1,0 +1,83 @@
+<body>
+  <div id="container" data-mouseenter="purple" data-mouseleave="">
+    <div id="target" data-mouseenter="green" data-mouseleave=""></div>
+  </div>
+
+  <script>
+    // const container = document.querySelector("#container");
+    // const target = document.querySelector("#target");
+
+    // // container: get data
+    // const containerEnterColor = container.dataset.mouseenter;
+    // const containerLeaveColor = container.dataset.mouseleave;
+    // console.log(containerEnterColor);
+
+    // // target: get data
+    // const targetEnterColor = target.dataset.mouseenter;
+    // const targetLeaveColor = target.dataset.mouseleave;
+    // console.log(targetEnterColor);
+
+    // // action
+    // const containerBgColorChangeEnter = () => {
+    //   container.style.backgroundColor = containerEnterColor;
+    // };
+    // const containerBgColorChangeLeave = () => {
+    //   container.style.backgroundColor = containerLeaveColor;
+    // };
+
+    // const targetBgColorChangeEnter = () => {
+    //   target.style.backgroundColor = targetEnterColor;
+    // };
+    // const targetBgColorChangeLeave = () => {
+    //   target.style.backgroundColor = targetLeaveColor;
+    // };
+
+    // // eventLisner
+    // container.addEventListener("mouseenter", containerBgColorChangeEnter);
+    // container.addEventListener("mouseleave", containerBgColorChangeLeave);
+
+    // target.addEventListener("mouseenter", targetBgColorChangeEnter);
+    // target.addEventListener("mouseleave", targetBgColorChangeLeave);
+
+    // もっと短く書く
+
+    // すべての対象要素を取得
+    const elements = document.querySelectorAll("#container, #target");
+
+    // 各要素に対してイベントリスナーを追加
+    elements.forEach((element) => {
+      const enterColor = element.dataset.mouseenter;
+      const leaveColor = element.dataset.mouseleave;
+
+      element.addEventListener("mouseenter", () => {
+        element.style.backgroundColor = enterColor;
+      });
+      element.addEventListener("mouseleave", () => {
+        element.style.backgroundColor = leaveColor;
+      });
+    });
+  </script>
+  <style>
+    /* スタイルの調節 */
+    #container,
+    #target {
+      position: absolute;
+      border: 1px solid black;
+      margin: 20px;
+    }
+
+    #target {
+      width: 60px;
+      height: 60px;
+    }
+
+    #container {
+      width: 100px;
+      height: 100px;
+    }
+
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>
