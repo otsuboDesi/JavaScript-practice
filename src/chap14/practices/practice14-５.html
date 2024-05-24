@@ -1,0 +1,22 @@
+<div id="target">この要素の位置と大きさの取得</div>
+<style>
+  #target {
+    margin: 100px;
+    width: 200px;
+    border: 10px solid red;
+  }
+</style>
+<script>
+  const target = document.querySelector("#target");
+  // 1.ビューポートの上端から要素の枠線の上端までの距離
+  console.log(target.getBoundingClientRect().top);
+
+  // 2. ビューポートの左端から要素の枠線の右端までの距離
+  console.log(target.getBoundingClientRect().right);
+
+  // 3. 要素の枠線（border）を含めた横幅
+  console.log(target.getBoundingClientRect().width);
+
+  // 4. 要素の枠線（border）を含めた縦幅
+  console.log(target.getBoundingClientRect().height);
+</script>
