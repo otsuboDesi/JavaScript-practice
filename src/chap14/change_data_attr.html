@@ -1,0 +1,19 @@
+<div id="sum" data-base-val1="10" data-base-val2="20"></div>
+
+<script>
+  // data属性:ユーザーが独自で値を保持するためのHTML属性
+  // data-*のような形をしている
+  // JavaSccript型データ属性にアクセスするときはdatasetという特別なプロパティを通してアクセスする。
+  // 属性値は文字列として取得される
+
+  const sum = document.querySelector("#sum");
+  // deta属性を取得
+  const val1 = parseInt(sum.dataset.baseVal1);
+  // '-'はキャメルケースとして表現する
+  const val2 = parseInt(sum.dataset.baseVal2);
+
+  // データの属性の追加も可能
+  sum.dataset.sumVal = val1 + val2;
+  // 結果をテキストとして追加する
+  sum.textContent = val1 + val2;
+</script>
