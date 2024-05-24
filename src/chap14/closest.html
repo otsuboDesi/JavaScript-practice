@@ -1,0 +1,19 @@
+<section style="background-color: yellow">
+  <div>
+    <span id="target"></span>
+  </div>
+</section>
+<section style="background-color: orange"></section>
+
+<script>
+  // closest(): 践祚要素をさかのぼって検索することができる
+  setTimeout(() => {
+    // セレクタ文字列に一致した最初のElementを取得する -> <span>
+    const target = document.querySelector("#target");
+    console.log("target: ", target);
+    // 祖先要素のsectionタグを検索
+    const section = target.closest("section");
+    // prepend(): 要素内の最初の子要素としてNodeを挿入する。文字列も挿入可能
+    section.prepend("発見 -> ");
+  }, 2000);
+</script>

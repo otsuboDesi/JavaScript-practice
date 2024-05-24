@@ -1,0 +1,22 @@
+<div></div>
+<style>
+  /* div要素のスタイルを設定 */
+  div {
+    width: 20px; /* 幅を20pxに設定 */
+    height: 20px; /* 高さを20pxに設定 */
+    background-color: red; /* 背景色を赤に設定 */
+    transform: scale(5); /* 要素を5倍に拡大 */
+  }
+</style>
+<script>
+  // 最初の<div>要素を取得
+  const div = document.querySelector("div");
+
+  // offsetHeightプロパティを使用して、要素のレイアウト上の高さを取得
+  // これはCSSのscaleプロパティの影響を受けない
+  console.log(div.offsetHeight); // 結果は20
+
+  // getBoundingClientRectメソッドを使用して、要素のレンダリングされた高さを取得
+  // これはCSSのscaleプロパティの影響を受ける
+  console.log(div.getBoundingClientRect().height); // 結果は100
+</script>

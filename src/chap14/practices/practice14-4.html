@@ -1,0 +1,17 @@
+<a href="https://google.com">Googleへ</a>
+<a href="https://www.bing.com">Bingへ</a>
+<a href="https://duckduckgo.com">DuckDuckGoへ</a>
+
+<script>
+  // setAttribute: 属性に値を設定するElementメソッド
+  const links = document.querySelectorAll("a");
+  //   第一引数：属性、第二引数：値を設定する
+  console.log(links);
+  links.forEach((link) => {
+    const href = link.getAttribute("href");
+
+    if (/google\.com/.test(href)) {
+      link.setAttribute("href", "https://www.yahoo.co.jp/");
+    }
+  });
+</script>

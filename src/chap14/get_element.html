@@ -1,0 +1,41 @@
+<!-- 特定のElementを取得するメソッド -->
+<script>
+  // idの属性値と一致した最初のElementを取得する。一致する要素がない時はnull
+  document.getElementById("idAttribute");
+  // return: Element | null
+
+  // class属性を使ってElementが格納された配列風オブジェクトを取得する。一致する要素がない場合、空のHTMLCollentionがある
+  document.getElementsByClassName("classAttribute");
+  // return :HTMLCollention
+
+  // name属性を使ってElementが格納された配列風オブジェクトを取得する。一致する要素がない場合、空のHTMLCollentionがある
+  document.getElementsByName("nameAttribute");
+  // return :HTMLCollention
+
+  // tag属性を使ってElementが格納された配列風オブジェクトを取得する。一致する要素がない場合、空のHTMLCollentionがある
+  document.getElementsByTagName("tagNameAttribute");
+  // return :HTMLCollention
+</script>
+
+<section id="container">
+  <span class="target-cls"></span>
+  <div class="'list">
+    <input name="child1" />
+    <input name="child2" />
+  </div>
+  <p class="target-cls"></p>
+</section>
+
+<script>
+  const elById = document.getElementById("container");
+  console.log(elById);
+
+  const elsByCls = document.getElementsByClassName("target-cls");
+  console.log(elsByCls);
+
+  const elsByName = document.getElementsByName("child1");
+  console.log(elsByName);
+
+  const elsByTag = document.getElementsByTagName("p");
+  console.log(elsByTag);
+</script>

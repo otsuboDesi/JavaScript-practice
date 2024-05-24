@@ -1,0 +1,16 @@
+<div id="test"><span>Hello World</span></div>
+
+<script>
+  // innerHTML:HTMLタグの情報も含めて文字列として取得したいときに使用
+
+  // Elementの取得
+  const testEl = document.querySelector("#test");
+  // innerHTMLの確認
+  console.log(`innerHTML: ${testEl.innerHTML}`);
+  // output: innerHTML: <span>Hello World</span>
+
+  setTimeout(() => {
+    // innnerHTMLの変更
+    testEl.innerHTML = "<h1>Good World</h1>";
+  }, 2000);
+</script>

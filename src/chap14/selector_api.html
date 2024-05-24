@@ -1,0 +1,33 @@
+<!-- 1 -->
+<section id="container">
+  <!-- 2 -->
+  <span class="target-cls"></span>
+  <div class="list">
+    <!-- 2 -->
+    <input name="child1" />
+    <input name="child2" />
+  </div>
+  <!-- 2, 4 -->
+  <p class="target-cls"></p>
+</section>
+<script>
+  //1. id属性から要素を取得
+  const elById = document.querySelector("#container");
+
+  //2. class属性に一致する全ての要素を取得
+  const elsByCls = document.querySelectorAll(".target-cls");
+  // 一致した一番最初の要素のみ取得する場合にはquerySelectorを使用
+  const elByCls = document.querySelector(".target-cls");
+
+  //3. name属性の値がchild1の要素を全て取得
+  const elsByName = document.querySelectorAll('[name="child1"]');
+
+  //4. タグ名に一致する全ての要素を取得
+  const elsByTag = document.querySelectorAll("p");
+
+  //   NOTE: getElementByIdを使うケース
+  // quesrySelectorのかわりにgetElementByIdを使われることがある。
+  // → getElementByIdを使った方がquesrySelectorよりも高速で処理される
+  // 速度の違いは、ページ上に存在するNODE数が増えれば増えるほど大きくなる。比較的大きなWebアプリになることが想定されるのであれば(１ページのNode数が10万程度)
+  // getElementByIdを使った方がいい
+</script>
