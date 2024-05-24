@@ -1,0 +1,32 @@
+<script>
+  // 親のコンストラクタを宣言
+  function Parent() {}
+
+  // 子のコンストラクタを宣言
+  function Child() {}
+
+  // 親のプロトタイプにメソッドを追加
+  Parent.prototype.parentMethod = function () {
+    console.log("親のメソッド"); // parentMethodが呼び出されたときに「親のメソッド」と出力する
+  };
+
+  // 親のプロトタイプを継承
+  Child.prototype = Object.create(Parent.prototype); // ❶ ChildのプロトタイプにParentのプロトタイプを設定
+
+  // 子のプロトタイプにメソッドを追加
+  Child.prototype.childMethod = function () {
+    // ❷ childMethodを追加
+    console.log("子のメソッド"); // childMethodが呼び出されたときに「子のメソッド」と出力する
+  };
+
+  // インスタンス化
+  const childObj = new Child(); // Childの新しいインスタンスを作成
+
+  // インスタンスが親のメソッドを呼び出す
+  childObj.parentMethod(); // > 親のメソッド
+  // Childのプロトタイプチェーンを辿り、Parentのプロトタイプに定義されたparentMethodが呼び出される
+
+  // インスタンスが子のメソッドを呼び出す
+  childObj.childMethod(); // > 子のメソッド
+  // Childのプロトタイプに定義されたchildMethodが呼び出される
+</script>
