@@ -1,0 +1,5 @@
+/* styleの情報をCSSファイルにまとめる */
+div {
+  color: red;
+  background-color: blue;
+}
