@@ -1,0 +1,27 @@
+<script>
+  // hasOwnProperty: 自身のオブジェクトにプロパティは存在するかを確認するメソッド
+  //   booleanを返す
+  class Person {
+    // constructor()クラスの新しいインスタンスを作成するときに呼び出される特殊なメソッド。
+    // コンストラクタは、オブジェクトの初期化に使用され、クラスのインスタンスが生成されたときにそのプロパティや状態を設定するための初期化処理を行う
+    constructor() {
+      // this.name プロパティを "独習太郎" に設定
+      this.name = "独習太郎";
+    }
+
+    hello() {
+      console.log("こんにちは");
+    }
+  }
+
+  const taro = new Person();
+
+  //   taro オブジェクトが自身のプロパティとして "name" を持っているかどうかを確認。このプロパティはコンストラクタ内で直接taroに設定されているため、結果は true
+  console.log(taro.hasOwnProperty("name"));
+
+  //   "name" プロパティが taro オブジェクトに存在するかどうかを確認。
+  // in演算子はプロトタイプチェーンも含めてプロパティの存在を確認する
+  console.log("name" in taro);
+  console.log(taro.hasOwnProperty("hello"));
+  console.log("hello" in taro);
+</script>

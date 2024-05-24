@@ -1,0 +1,13 @@
+<script>
+  class TestCls {
+    constructor() {
+      this.prop = "値";
+      //   ここにreturnがあるのでthisは無視される
+      //
+      return { test: "returnで返されたオブジェクト" };
+    }
+  }
+
+  //   new演算子の戻り値はreturnのオブジェクトになる
+  console.log(new TestCls());
+</script>

@@ -1,0 +1,21 @@
+<script>
+  class StdClass {
+    constructor(arg) {
+      this.arg = arg;
+    }
+
+    static prontFn = console.log(this.arg);
+
+    static print(arg) {
+      // 静的メソッド内で静的メソッドを実行する際はクラス名を付与する
+      printFn(arg);
+    }
+
+    print() {
+      this.constructor.print(this.arg);
+    }
+  }
+
+  const std = new StdClass("こんにちは");
+  std.print();
+</script>

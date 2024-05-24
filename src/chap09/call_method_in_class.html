@@ -1,0 +1,22 @@
+<script>
+  class User {
+    constructor(username, password) {
+      // コンストラクタでusernameとpasswordを受け取り、インスタンスのプロパティに設定
+      this.username = username;
+      this.password = password;
+    }
+    // 次にloginメソッドが続いて実行され、ユーザー名とパスワードを含むログイン情報がコンソールに表示される
+    login() {
+      // thisを通して他のメソッドを実行
+      this.check();
+      console.log(`ログイン [${this.username}/ ${this.password}]`);
+    }
+    // checkメソッドが最初に呼び出される
+    check() {
+      console.log(`ログイン情報をチェックします`);
+    }
+  }
+
+  const taro = new User("独習太郎", "taro-pwd");
+  taro.login();
+</script>

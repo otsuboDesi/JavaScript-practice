@@ -1,0 +1,28 @@
+<script>
+  // パブリックとプライベート(先頭に♯を付ける)
+
+  class Counter {
+    // プライベートプロパティ
+    #count = 0;
+    // プライベートメソッド
+    #print() {
+      console.log(this.#count);
+    }
+    // パブリックメソッド
+    increment() {
+      this.#count++;
+      // プライベートメソッドを実行
+      this.#print();
+    }
+  }
+  const counter = new Counter();
+  // パブリックメソッドを実行
+  counter.increment();
+
+  // プライベートプロパティはクラス外からアクセス不可！
+  counter.#count = 10;
+  // プライベートメソッドはクラス外からの実行不可！
+  counter.#print();
+
+  //   HACK:プライベートプロパティを使うときはクラスのトップレベルで宣言する必要がある
+</script>

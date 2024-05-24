@@ -1,0 +1,18 @@
+<script>
+  //ユーザーを作成するクラスの定義
+  class User {
+    // コンストラクタメソッドでユーザー名とパスワードを受け取り、それをインスタンスのプロパティとして設定
+    constructor(username, password) {
+      this.username = username;
+      this.password = password;
+    }
+
+    login() {
+      // ログインメソッドを定義。このメソッドはユーザー名とパスワードをコンソールに表示
+      console.log(`ログイン [${this.username}/ ${this.password}]`);
+    }
+  }
+  // 'User'クラスを使用して新しいユーザーオブジェクトを生成
+  const taro = new User("独習太郎", "taro-pwd");
+  const hanako = new User("独習花子", "hanako-pwd");
+</script>

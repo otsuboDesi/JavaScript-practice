@@ -1,0 +1,31 @@
+<script>
+  class Person {
+    constructor(firstname, lastname) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+      //  this.fullnameの定義は書かない
+    }
+    get fullname() {
+      // fullnameが取得された場合には氏名を結合して返す
+      return this.lastname + this.firstname;
+    }
+    set age(value) {
+      // ageに値が設定された場合には_ageに数値を設定
+      // '_'はそのプロパティやメソッドはクラス内のみの仕様に制限していることを指している
+      this._age = Number(value);
+    }
+    get age() {
+      // ageが取得された場合には値が保持されている_ageの値を返す
+      return this._age;
+    }
+  }
+  const taro = new Person("太郎", "独習");
+  // methodの時のように()は必要ない
+  console.log(taro.fullname);
+  // セッターを通して文字列で値を設定
+  taro.age = "18";
+  // ゲッターを通して値を取得
+  console.log(typeof taro.age);
+  // オブジェクトの状態を確認
+  console.log(taro);
+</script>

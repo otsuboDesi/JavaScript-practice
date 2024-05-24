@@ -1,0 +1,31 @@
+<script>
+  class User {
+    constructor(username, password) {
+      // コンストラクタでusernameとpasswordを受け取り、インスタンスのプロパティに設定
+      this.username = username;
+      this.password = password;
+    }
+
+    login() {
+      // loginメソッドはusernameとpasswordをコンソールに表示する
+      console.log(`ログイン [${this.username}/ ${this.password}]`);
+    }
+
+    changePassword(pwd) {
+      // changePasswordメソッドは受け取った新しいパスワードをインスタンスのpasswordプロパティに設定し、変更をコンソールに表示
+      this.password = pwd;
+      //   pwdではなく、this.passwordで変更された値が正しく変更されているかを確認する
+      // pwdを引数に渡すと単にメソッドに渡された引数の値を表示することになる
+      console.log(`パスワードが[${this.password}]に変更されました`);
+    }
+  }
+
+  // Userクラスからtaroというインスタンスを生成
+  const taro = new User("独習太郎", "taro-pwd");
+  // taroインスタンスでloginメソッドを呼び出し、初期設定されたusernameとpasswordを表示
+  taro.login();
+  // taroのパスワードを"new-pwd"に変更
+  taro.changePassword("new-pwd");
+  // 新しいパスワードで再びloginメソッドを呼び出し、変更後のusernameとpasswordを表示
+  taro.login();
+</script>

@@ -1,0 +1,13 @@
+<script>
+  // protptype():objectに保持される特別なプロパティ
+  // protptypeは関数(オブジェクトに)自動的に設定されているプロパティ
+
+  function Test() {}
+  // 関数はオブジェクトの一種
+  Test.prop = "値"; // Test関数はオブジェクトなので、プロパティに値を設定できる
+  console.log(Test.prop);
+
+  // prototypeプロパティの存在確認
+  console.log("prototype" in Test);
+  // trueが返ってくる。Testコンストラクタ関数にprototypeプロパティが存在することが確認できる
+</script>

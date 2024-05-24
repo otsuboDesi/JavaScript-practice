@@ -1,0 +1,37 @@
+<script>
+  // fruit1オブジェクトを定義し、appleメソッドを追加
+  const fruit1 = {
+    apple: function () {
+      console.log("リンゴ"); // appleメソッドが呼び出されたときに「リンゴ」と出力する
+    },
+  };
+
+  // fruit1をプロトタイプとして持つfruit2オブジェクトを作成
+  const fruit2 = Object.create(fruit1);
+  // fruit2オブジェクトにbananaメソッドを追加
+  fruit2.banana = function () {
+    console.log("バナナ"); // bananaメソッドが呼び出されたときに「バナナ」と出力する
+  };
+
+  // fruit2をプロトタイプとして持つfruit3オブジェクトを作成
+  const fruit3 = Object.create(fruit2);
+  // fruit3オブジェクトにmelonメソッドを追加
+  fruit3.melon = function () {
+    console.log("メロン"); // melonメソッドが呼び出されたときに「メロン」と出力する
+  };
+
+  // fruit3オブジェクトのappleメソッドを呼び出し
+  // プロトタイプチェーンを辿ってfruit1のappleメソッドが見つかり、呼び出される
+  fruit3.apple(); // コンソールに「リンゴ」と表示される
+
+  // fruit3オブジェクトのbananaメソッドを呼び出し
+  // プロトタイプチェーンを辿ってfruit2のbananaメソッドが見つかり、呼び出される
+  fruit3.banana(); // コンソールに「バナナ」と表示される
+
+  // fruit3オブジェクトのmelonメソッドを呼び出し
+  // fruit3自身のmelonメソッドが呼び出される
+  fruit3.melon(); // コンソールに「メロン」と表示される
+
+  // fruit3オブジェクトをコンソールに出力
+  console.log(fruit3);
+</script>

@@ -1,0 +1,25 @@
+<script>
+  //クラスもプロトタイプベースで動いている
+  // Testクラスの定義
+  class Test {
+    // helloメソッドの定義
+    hello() {
+      console.log("こんにちは");
+    }
+  }
+
+  // Testクラスのインスタンスを作成
+  const instance = new Test();
+
+  // クラスのプロトタイプからhelloメソッドを直接呼び出す
+  Test.prototype.hello();
+  // > こんにちは
+
+  // インスタンスのプロトタイプからhelloメソッドを呼び出す
+  instance.__proto__.hello();
+  // > こんにちは
+
+  // インスタンスからhelloメソッドを呼び出す
+  instance.hello();
+  // > こんにちは
+</script>

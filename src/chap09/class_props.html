@@ -1,0 +1,17 @@
+<script>
+  class TestCls {
+    // objectの生成を行う
+    constructor(arg) {
+      this.prop = arg;
+    }
+  }
+
+  //   new演算子でインスタントオブジェクトを作成
+  // インスタンス {prop:"引数"}になる
+  const obj = new TestCls("引数");
+  console.log(obj.prop);
+
+  //   objectのプロパティの値を変更
+  obj.prop = "値の変更";
+  console.log(obj.prop);
+</script>
