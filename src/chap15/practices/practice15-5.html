@@ -1,0 +1,23 @@
+<body>
+  <div></div>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    div {
+      background: linear-gradient(#e66465, #9198e5);
+      height: 200vh;
+    }
+  </style>
+  <script>
+    // wheelibenntonitaisite
+    // preventDefaultを実行してもデフォルト値が無効化されないことを確認する
+
+    function preventDefault(event) {
+      event.preventDefault();
+    }
+
+    document.addEventListener("wheel", preventDefault);
+  </script>
+</body>
