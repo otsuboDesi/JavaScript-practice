@@ -1,0 +1,46 @@
+<section>
+  section<br />
+  <div>
+    div<br />
+    <button>button</button>
+    <!-- クリックイベント！ -->
+  </div>
+  <p>p<br />この要素は伝播の対象外です。</p>
+</section>
+<style>
+  section,
+  div,
+  p,
+  button {
+    padding: 10px;
+    border: 10px solid skyblue;
+  }
+</style>
+<script>
+  // stopPropagation(): 他の要素への伝播を止める。
+  // capturing phase: このフェースで呼び出された場合は、メソッドの下位の要素のアクションは実行されない
+  // bubbling and target phase: このフェーズで呼び出された場合には上位の要素にイベントを伝播しません
+
+  const button = document.querySelector("button");
+  const div = document.querySelector("div");
+  const section = document.querySelector("section");
+  // buttonに対するアクションを登録
+  button.addEventListener("click", (event) => {
+    console.log("buttonのclickイベントが実行されました。");
+  });
+  // divに対するアクションを登録
+  div.addEventListener("click", (event) => {
+    console.log("divのclickイベントが実行されました。");
+  });
+  // sectionに対するアクションを登録
+  section.addEventListener(
+    "click",
+    (event) => {
+      // capturing phasでイベント伝播を停止
+      event.stopPropagation();
+      console.log("sectionのclickイベントが実行されました。");
+    },
+    // capturing phaseでアクションを実行
+    { capture: true }
+  );
+</script>
