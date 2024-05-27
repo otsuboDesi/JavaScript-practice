@@ -1,0 +1,30 @@
+<body>
+  <div id="target"></div>
+
+  <script>
+    const div = document.querySelector("#target");
+    div.onmouseenter = function () {
+      div.style.backgroundColor = "red";
+    };
+
+    div.onmouseleave = function () {
+      // 問題には'none'で指定だったが、動かなかったため""で代用した
+      div.style.backgroundColor = "";
+    };
+  </script>
+
+  <style>
+    /* 画面の見栄えを調節 */
+    div {
+      position: absolute;
+      border: 1px solid black;
+      width: 100px;
+      height: 100px;
+      margin: 20px;
+    }
+
+    body {
+      background-color: cornsilk;
+    }
+  </style>
+</body>

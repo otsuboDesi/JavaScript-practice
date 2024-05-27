@@ -1,0 +1,13 @@
+<button>アラート</button>
+
+<script>
+  // イベントハンドラーの解除
+
+  const btn = document.querySelector("button");
+  btn.onclick = function () {
+    // アクションの追加
+    alert("アラート！");
+  };
+  // アクションの解除
+  btn.onclick = null;
+</script>

@@ -1,0 +1,21 @@
+<div>色は変わりません。</div>
+<button id="color">文字色の変更</button>
+
+<script>
+  // アクションの解除をする
+  //   removeEventLisner: 第一引数にはイベントタイプ、第二引数にはactionを記述する
+  // 第二引数にはaddEventLisnerに渡している関数と同じものを渡さなければならない
+
+  const targetEl = document.querySelector("div");
+  const colorBtn = document.querySelector("#color");
+  function colorChange(event) {
+    targetEl.style.color = "#ff0000";
+  }
+
+  // アクションの登録
+  colorBtn.addEventListener("click", colorChange);
+
+  // アクションの解除（うまくいきます！）
+  //   同じ関数名を第二引数に渡しているので、機能する
+  colorBtn.removeEventListener("click", colorChange);
+</script>
