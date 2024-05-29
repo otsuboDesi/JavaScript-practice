@@ -1,0 +1,39 @@
+<script>
+  // 通常モード
+  // NOTE：通常モードではthisが取る値は全てオブジェクト
+
+  // thisを返す関数
+  function whatIsThis() {
+    return this;
+  }
+  console.log(whatIsThis.call(10) instanceof Number);
+  // > true thisはNumber型のオブジェクトになる
+  console.log(whatIsThis.call("hello") instanceof String);
+  // > true thisはString型のオブジェクトになる
+  console.log(whatIsThis.call(false) instanceof Boolean);
+  // > true thisはBoolean型のオブジェクトになる
+  console.log(whatIsThis.call(undefined));
+  // > window thisはWindowオブジェクトになる
+  console.log(whatIsThis.call(null));
+  // > window thisはWindowオブジェクトになる
+</script>
+
+<script>
+  // strictモード
+  // NOTE: 文字列、数値、真偽値、null, undefinedなどのプリミティブ値もthisの参照先として保持できる
+
+  "use strict";
+  function whatIsThis() {
+    return this;
+  }
+  console.log(whatIsThis.call(10) === 10);
+  // > true thisはプリミティブ値の10になる
+  console.log(whatIsThis.call("hello") === "hello");
+  // > true thisはプリミティブ値の"hello"になる
+  console.log(whatIsThis.call(false) === false);
+  // > true thisはプリミティブ値のfalseになる
+  console.log(whatIsThis.call(undefined) === undefined);
+  // > true thisはプリミティブ値のundefinedになる
+  console.log(whatIsThis.call(null) === null);
+  // > true thisはプリミティブ値のnullになる
+</script>
