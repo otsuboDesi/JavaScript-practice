@@ -1,0 +1,16 @@
+<script>
+  // 通常モード
+
+  globalVariable = "これはグローバルスコープに配置されます。";
+  console.log(window.globalVariable);
+  // → これはグローバルスコープに配置されます。
+</script>
+<script>
+  // strictモード
+
+  "use strict";
+
+  // あらかじめlet等で変数を宣言していないものに値を代入しようとするとエラーが発生
+  globalVariable = "これはエラーになります。";
+  // → Uncaught ReferenceError: globalVariable is not defined（globalVariableは定義されていません。）
+</script>

@@ -1,0 +1,10 @@
+<!-- スクリプトがモジュールであることを宣言する -->
+
+<script type="module">
+  // 宣言された後のコード<script>内のコードはDOMツリーの構築後にしか実行されなくなる
+  const h1 = document.querySelector("h1");
+
+  //  見出し DOMツリー構築後にJavaScriptが実行される
+  console.log(h1.textContent);
+</script>
+<h1>見出し</h1>
