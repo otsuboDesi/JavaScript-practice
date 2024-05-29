@@ -1,3 +1,5 @@
+// sub.module.jsの機能をparent.module.jsというファイルにモジュール集約する
+
 // デフォルトエクスポートを含むすべての機能をエクスポート
 export * from "./sub.module.js";
 
