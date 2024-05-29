@@ -1,0 +1,53 @@
+<!-- Strictモードの有効化 -->
+<!-- ファイルの先頭 -->
+<script>
+  "use strict";
+</script>
+
+<!-- 関数の先頭 -->
+<script>
+  function strictFunction() {
+    "use strict";
+    // 関数内のコード
+  }
+</script>
+
+<!-- ES Modulesの例 -->
+<script type="module">
+  // Strictモードは有効です。
+</script>
+
+<!-- クラスの例 -->
+<script>
+  class StrictClass {
+    constructor() {
+      // Strictモードは有効です。
+    }
+
+    method() {
+      // Strictモードは有効です。
+    }
+  }
+</script>
+
+<!-- Strictモードによる影響  -->
+<!--
+1. 将来的に使いそうなキーワードが予約語として確保される
+2. 宣言されていない変数への代入をエラーとする
+3. 書き込み不可のプロパティを変更しようとするとエラーが発生する
+4. 関数宣言にブロックスコープが適用される
+5. thisはプリミティブ値も許容するようになる
+-->
+
+<!-- 予約語の一覧 -->
+<!--
+Strictモードで追加される予約語:
+- implements
+- public
+- package
+- private
+- interface
+- static
+- let
+- yield
+-->
