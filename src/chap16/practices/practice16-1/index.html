@@ -1,0 +1,14 @@
+<script type="module">
+  // 2. import
+  import { userObj, sum, MyClass } from "./exports.js";
+
+  // 3. dynamic import
+  async function asyncFunction() {
+    let { userObj, sum, MyClass } = await import("./exports.js");
+    console.log(userObj);
+    sum(1, 2);
+    new MyClass();
+  }
+
+  asyncFunction();
+</script>
