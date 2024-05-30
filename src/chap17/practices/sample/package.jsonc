@@ -1,0 +1,46 @@
+// NOTE:コメントアウトを書く為に、このファイルの拡張子を.jsoncにしているが、本来は.json
+{
+  // パッケージの公開に関係するフィールド
+  "name": "sample", // パッケージ名（リポジトリ名やフォルダ名などを付ける）
+  "author": "独習太郎 <taro@dokusyu.com> (https://dokusyu.com)", // 作者名 <Email>（サイトURL）
+  "version": "1.0.0", // バージョン名（1.2.0のような3つの数値で表す）
+  "description": "A Test project", // パッケージの説明
+  "main": "src/main.js", // 外部からパッケージを使うときのエントリーポイント（開始位置）
+  // リポジトリの情報
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dokusyu/testing.git"
+  },
+  "private": true, // trueの場合は、公開のコマンドを流しても公開されない
+
+  // パッケージの実行に関するフィールド
+  "type": "module", // ES Modules (module) またはCommonJS (commonjs) を指定する
+  "scripts": {
+    // パッケージで使うスクリプトを登録する
+    "dev": "node sample.js",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    // コードの実行に必要なパッケージを記述する
+    "vue": "^2.5.2"
+  },
+  "devDependencies": {
+    // 開発時に必要なパッケージを記述する
+    "webpack-merge": "^4.1.0"
+  },
+  "optionalDependencies": {
+    // 任意で使用可能なパッケージを記述する
+    "sharp": "0.26.3"
+  },
+  "engines": {
+    // 実行時に要求されるNode.jsとnpmのバージョンを記述する
+    "node": ">= 6.0.0",
+    "npm": ">= 3.0.0"
+  },
+  "browserslist": [
+    // ブラウザやNode.jsのサポートをどこまで行うか記述する
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}
